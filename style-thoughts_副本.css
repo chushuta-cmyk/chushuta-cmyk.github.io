@@ -1,0 +1,75 @@
+/* style-thoughts.css */
+
+:root {
+    --pp-green: #20C997;
+    --pp-green-soft: rgba(32, 201, 151, 0.1);
+    --nordic-white: #FFFFFF;
+    --border-soft: #F0F2F2;
+    --text-dim: #6A7373;
+}
+
+/* 顶部子导航按钮样式 */
+.sub-nav { display: flex; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid var(--border-soft); }
+.nav-btn {
+    background: none; border: none; padding: 15px 0;
+    font-size: 0.85rem; font-weight: 700; color: #aaa;
+    cursor: pointer; position: relative;
+}
+.nav-btn.active { color: var(--text-main); }
+.nav-btn.active::after {
+    content: ''; position: absolute; bottom: -1px; left: 0;
+    width: 100%; height: 2px; background: var(--sage);
+}
+
+/* 档案卡片 */
+.archive-card {
+    background: var(--nordic-white);
+    border: 1px solid var(--border-soft);
+    padding: 35px;
+    margin-bottom: 25px;
+    transition: 0.4s var(--transition);
+}
+.archive-card:hover { border-color: var(--pp-green); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+
+.card-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.tag { font-size: 0.65rem; font-weight: 800; color: var(--sage); letter-spacing: 1px; }
+.date { font-size: 0.7rem; color: #ccc; }
+
+/* Perplexity 风格展开按钮 */
+.expand-btn {
+    background: var(--pp-green-soft);
+    border: none; color: var(--pp-green);
+    padding: 10px 20px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 700;
+    cursor: pointer; transition: 0.3s; margin-top: 20px;
+}
+.expand-btn:hover { background: var(--pp-green); color: #fff; }
+
+/* Markdown 渲染区 */
+.md-render-area {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.3s ease;
+}
+.md-render-area.open {
+    max-height: 5000px; padding-top: 30px; margin-top: 30px;
+    border-top: 1px solid var(--border-soft);
+}
+
+/* 宗教分类选择器 */
+.category-pill-box { display: flex; gap: 10px; margin-bottom: 30px; }
+.pill {
+    background: #f8f8f8; border: 1px solid var(--border-soft);
+    padding: 5px 15px; border-radius: 15px; font-size: 0.7rem;
+    cursor: pointer; transition: 0.3s; color: #888;
+}
+.pill.active { background: var(--sage); color: #fff; border-color: var(--sage); }
+
+/* Travel 时间轴 */
+.travel-timeline { margin-top: 20px; }
+.timeline-unit { border-left: 2px solid var(--border-soft); padding-left: 30px; position: relative; }
+.unit-marker {
+    position: absolute; left: -2px; top: 0;
+    background: var(--sage); color: #fff;
+    font-size: 0.6rem; padding: 2px 8px; transform: translateX(-50%);
+}
+.gallery-img { width: 100%; border-radius: 2px; filter: saturate(0.9); }

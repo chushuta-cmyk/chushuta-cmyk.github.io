@@ -3,28 +3,43 @@
 <head>
     <meta charset="UTF-8"><title>Research | Karama</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <aside class="sidebar">
-        <div><a href="index.html" class="name-brand">KARAMA</a>
+        <div class="sidebar-content">
+            <div class="profile-block">
+                <img src="avatar.jpg" alt="Karama" class="avatar">
+                <a href="index.html" class="name-brand">KARAMA</a>
+                <p class="tagline">Bioinformatics & AI Architect</p>
+            </div>
             <ul class="nav-list">
-                <li><a href="index.html">01. Profile</a></li>
+                <li><a href="index.html">01. Identity</a></li>
                 <li><a href="research.html" class="active">02. Research</a></li>
                 <li><a href="engineering.html">03. Engineering</a></li>
-                <li><a href="thoughts.html">04. Thoughts</a></li>
+                <li><a href="thoughts.html">04. Thoughts/Travel</a></li>
             </ul>
+            <div class="contact-info">
+                <a href="mailto:chushuta@gmail.com">chushuta@gmail.com</a>
+            </div>
         </div>
+        <div class="sidebar-footer"><p>Hasbunallahu wa ni’mal wakil.</p></div>
     </aside>
+
     <main class="main-content">
-        <p class="page-title">Bioinformatics Lab</p>
-        <h2>Genomics & <br>Immune Landscapes.</h2>
+        <p class="page-title">Genomics & Immunology / 02</p>
+        <h2>Biological <br>Complexities.</h2>
+
         <div class="card">
-            <h3>EBV & NPC Project</h3>
-            <p>Analyzing single-cell trajectories and viral reactivation in Nasopharyngeal Carcinoma.</p>
+            <div class="meta">PROJECT — 01</div>
+            <h3>EBV Reactivation in NPC</h3>
+            <p>Utilizing single-cell RNA-seq to decode the trajectory of viral reactivation in Nasopharyngeal Carcinoma. Focused on immune polarization and prognostic biomarkers.</p>
         </div>
+
         <div class="card">
-            <h3>$s_{het}$ Algorithm</h3>
-            <p>Integrating population genetics metrics for improved variant interpretation.</p>
+            <div class="meta">ALGORITHM — 02</div>
+            <h3>$s_{het}$ Integration</h3>
+            <p>Implementing selection coefficient ($s_{het}$) metrics into clinical variant interpretation pipelines to assess gene essentiality in population genetics.</p>
         </div>
     </main>
 </body>

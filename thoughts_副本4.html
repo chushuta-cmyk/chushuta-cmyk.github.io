@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughts | Karama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-thoughts.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="nordic-theme">
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <img src="avatar.jpg" alt="Karama" class="avatar">
+            <a href="index.html" class="name-brand">KARAMA</a>
+            <p class="tagline">Bioinformatics & AI Architect</p>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">01. Identity</a></li>
+                    <li><a href="research.html">02. Research</a></li>
+                    <li><a href="engineering.html">03. Engineering</a></li>
+                    <li><a href="thoughts.html" class="active">04. Thoughts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <p class="page-meta">Cognitive & Spiritual Architecture / 04</p>
+            <h2>Exploration of <br>Logic & Systems.</h2>
+            <div class="nordic-line-v2"></div>
+        </header>
+
+        <nav class="sub-nav">
+            <button onclick="showSection('psych')" class="nav-btn active">Psychology</button>
+            <button onclick="showSection('religion')" class="nav-btn">Religion</button>
+            <button onclick="showSection('travel')" class="nav-btn">Travel</button>
+        </nav>
+
+        <section id="psych" class="thought-section active">
+            <div class="archive-card">
+                <div class="card-header">
+                    <span class="tag">#SystemicLogic</span>
+                    <span class="date">JAN 2026</span>
+                </div>
+                <h3>The T-Person's Manifesto</h3>
+                <p class="abstract">A formal exploration of emotional utilitarianism and cognitive autonomy. How to maintain internal entropy in a "Feeling" dominant world.</p>
+                <button class="expand-btn" onclick="toggleMD('manifesto', this)">
+                    <span class="btn-text">View Full Analysis</span>
+                </button>
+                <div id="manifesto-content" class="md-render-area"></div>
+            </div>
+        </section>
+
+        <section id="religion" class="thought-section">
+            <div class="category-pill-box">
+                <button class="pill active" onclick="filterRel('all', this)">All Systems</button>
+                <button class="pill" onclick="filterRel('islam', this)">Islam</button>
+                <button class="pill" onclick="filterRel('christian', this)">Christianity</button>
+            </div>
+
+            <div class="religion-grid">
+                <div class="archive-card rel-item" data-type="islam">
+                    <div class="card-header">
+                        <span class="tag">ISLAM | EPISTEMOLOGY</span>
+                    </div>
+                    
+                    <div class="script-block">
+                        <p class="arabic-text">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
+                        <p class="translation">"Sufficient for us is Allah, and [He is] the best Disposer of affairs."</p>
+                    </div>
+
+                    <p class="abstract" style="margin-top:25px;">Decoding the logical architecture of faith and the "Best Disposer" as a systemic stabilizer.</p>
+                    
+                    <button class="expand-btn" onclick="toggleMD('islam_logic', this)">
+                        <span class="btn-text">Read Notes</span>
+                    </button>
+                    <div id="islam_logic-content" class="md-render-area"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="travel" class="thought-section">
+            <div class="travel-timeline">
+                <div class="timeline-unit">
+                    <div class="unit-marker">CHINA / 2026</div>
+                    <div class="unit-body">
+                        <div class="travel-gallery">
+                            <img src="travel/sample.jpg" alt="Silk Road" class="gallery-img">
+                        </div>
+                        <p class="caption"><strong>Hexi Corridor:</strong> Tracing the path where geography dictates the flow of human logic.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 1. Tab 切换逻辑
+        function showSection(id) {
+            document.querySelectorAll('.thought-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // 2. 宗教过滤逻辑
+        function filterRel(type, btn) {
+            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.rel-item').forEach(item => {
+                item.style.display = (type === 'all' || item.dataset.type === type) ? 'block' : 'none';
+            });
+        }
+
+        // 3. Perplexity 风格 Markdown 展开逻辑
+        async function toggleMD(file, btn) {
+            const area = document.getElementById(`${file}-content`);
+            const btnText = btn.querySelector('.btn-text');
+            
+            if (area.classList.contains('open')) {
+                area.classList.remove('open');
+                btnText.textContent = 'View Full Analysis';
+                return;
+            }
+            
+            try {
+                const res = await fetch(`blogs/${file}.md`);
+                const text = await res.text();
+                area.innerHTML = marked.parse(text);
+                area.classList.add('open');
+                btnText.textContent = 'Collapse';
+            } catch (err) {
+                area.innerHTML = `<p style="color:#e74c3c; font-size:0.8rem; padding:20px; border:1px dashed #e74c3c;">
+                    [System] Markdown file 'blogs/${file}.md' not found. Please create it in your directory.
+                </p>`;
+                area.classList.add('open');
+            }
+        }
+    </script>
+    
+</body>
+</html>

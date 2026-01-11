@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thoughts & Logic | Karama</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="nordic-theme">
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <a href="index.html" class="name-brand">KARAMA</a>
+            <ul class="nav-list">
+                <li><a href="index.html">01. Identity</a></li>
+                <li><a href="research.html">02. Research</a></li>
+                <li><a href="engineering.html">03. Engineering</a></li>
+                <li><a href="thoughts.html" class="active">04. Thoughts / Travel</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <p class="page-title">Cognitive & Spiritual Architecture / 04</p>
+        
+        <nav class="sub-nav">
+            <button onclick="showSection('psych')" class="active">Psychology & Philosophy</button>
+            <button onclick="showSection('religion')">Comparative Religion</button>
+            <button onclick="showSection('travel')">Travel & History</button>
+        </nav>
+
+        <div class="nordic-line"></div>
+
+        <section id="psych" class="thought-section active">
+            <div class="nordic-card">
+                <span class="meta">CUPL | CLINICAL & COGNITIVE</span>
+                <h3>Systemic Logic & Power Dynamics</h3>
+                <p>Decoding family systems and clinical psychology through the lens of a T-type individual. Focusing on energy conservation, cognitive autonomy, and the architecture of emotional utilitarianism.</p>
+                <div class="blog-placeholder">Writing: "The T-Person's Manifesto on Emotional Systems" ...</div>
+            </div>
+        </section>
+
+        <section id="religion" class="thought-section">
+            <div class="nordic-card religion-theme">
+                <span class="meta">EPISTEMOLOGY | FAITH</span>
+                <h3>Comparative Religion Studies</h3>
+                <p>Exploring the shared logical structures and divergent epistemologies of spiritual systems.</p>
+                <div class="script-block">
+                    <p class="arabic-text">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
+                    <p class="translation">"Sufficient for us is Allah, and [He is] the best Disposer of affairs."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="travel" class="thought-section">
+            <div class="nordic-card">
+                <span class="meta">SILK ROAD | GEOGRAPHICAL DETERMINISM</span>
+                <h3>Travel & Historical Logic</h3>
+                <p>Observations from the Silk Road. Exploring how geography determines historical trajectory and the persistence of cultural archetypes across time and space.</p>
+                <div class="image-grid-placeholder">
+                    [Photo Project: Silk Road 2026 - Loading]
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.thought-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.sub-nav button').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

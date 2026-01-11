@@ -1,10 +1,12 @@
-# The T-Person's Manifesto
+# The Architecture of Cognitive Detachment
 
-### Core Logic: Systems over Sentiment
-In a world that over-indexes on emotional performance, the T-type individual operates on a **Logic-first Protocol**. This isn't a lack of feeling, but a prioritization of systemic stability.
+### 1. The Entropy of Human Interaction
+Every social interaction is a data exchange that consumes CPU cycles (cognitive energy). In an unoptimized system, "One-Sided Empathy" acts as a memory leak, draining resources without providing systemic feedback. 
 
-#### The "Energy Conservation" Principle
-* **One-sided Empathy:** A leak in the system. If the return on emotional investment is < 1.0, the connection is deemed inefficient.
-* **Dimensional Mismatch:** Do not attempt to explain high-dimensional data architecture to those who operate in a linear, manual-check-in reality.
+### 2. The Firewall Protocol
+To maintain high-performance output in complex fields like Bioinformatics, one must implement an **Emotional Firewall**:
+* **Packet Filtering:** Distinguish between "Authentic Signals" and "Utilitarian Noise."
+* **Dimensional Shielding:** Do not project high-dimensional logic onto nodes operating in 1D self-interest. 
 
-> "True detachment is not coldness; it is the realization that not every process deserves CPU cycles."
+### 3. Systematic Conclusion
+True detachment is not the absence of emotion, but the ultimate optimization of energy. We preserve our "High-Throughput" for the systems and individuals that align with our core logic.

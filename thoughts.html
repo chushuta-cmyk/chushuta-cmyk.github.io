@@ -11,7 +11,7 @@
 <body class="nordic-theme">
     <aside class="sidebar">
         <div class="sidebar-content">
-            <img src="avatar.jpg" alt="Karama" class="avatar">
+            <img src="avatar.png" alt="Karama" class="avatar">
             <a href="index.html" class="name-brand">KARAMA</a>
             <p class="tagline">Bioinformatics & AI Architect</p>
             <nav>
@@ -38,23 +38,41 @@
             <button class="nav-btn" onclick="showTab('travel')">Travel & History</button>
         </nav>
 
-        <section id="psych" class="tab-content active">
-            <div class="archive-card">
-                <div class="card-header">
-                    <span class="tag">#COGNITIVE_LOGIC</span>
-                    <span class="date">2026</span>
-                </div>
-                <h3>The T-Person's Manifesto on Emotional Systems</h3>
-                <p>Exploring the energy conservation law in social interactions through a T-type lens.</p>
-                <button class="expand-btn" onclick="toggleMD('manifesto', this)">
-                    <span class="btn-text">View Analysis</span>
-                </button>
-                <div id="manifesto-content" class="md-render-area"></div>
-            </div>
-        </section>
+<section id="psych" class="tab-content active">
+    <div id="psych-container"></div>
+</section>
 
         <section id="religion" class="tab-content">
             <div id="religion-grid" class="archive-grid">
+                <div class="archive-card rel-item">
+    <div class="card-header">
+        <span class="tag">WISDOM | LOGIC</span>
+        <span class="date">2026</span>
+    </div>
+    <div class="script-block">
+        <p class="arabic-text" dir="rtl">يُؤْتِي الْحِكْمَةَ مَن يَشَاءُ ۚ وَمَن يُؤْتَ الْحِكْمَةَ فَقَدْ أُوتِيَ خَيْرًا كَثِيرًا</p>
+        <p class="translation">"He grants wisdom to whom He wills; and whoever has been granted wisdom has certainly been granted much good."</p>
+    </div>
+    <button class="expand-btn" onclick="toggleMD('surah_al_baqarah_269', this)">
+        <span class="btn-text">View Analysis</span>
+    </button>
+    <div id="surah_al_baqarah_269-content" class="md-render-area"></div>
+</div>
+
+<div class="archive-card rel-item">
+    <div class="card-header">
+        <span class="tag">PROTECTION | STOP-LOSS</span>
+        <span class="date">2026</span>
+    </div>
+    <div class="script-block">
+        <p class="arabic-text" dir="rtl">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
+        <p class="translation">"Sufficient for us is Allah, and He is the best Disposer of affairs."</p>
+    </div>
+    <button class="expand-btn" onclick="toggleMD('hasbunallah_logic', this)">
+        <span class="btn-text">View Analysis</span>
+    </button>
+    <div id="hasbunallah_logic-content" class="md-render-area"></div>
+</div>
                 </div>
             
             <div class="generator-box">
@@ -72,21 +90,31 @@
             </div>
         </section>
 
-        <section id="travel" class="tab-content">
-            <div class="photo-feed">
-                <div class="archive-card">
-                    <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
-                        <img src="picsfolder/1.jpeg" alt="NY Upstate" style="width: 100%; height: auto;" onerror="this.src='https://via.placeholder.com/1000x600?text=1.jpeg+Not+Found'">
-                    </div>
-                    <div class="card-header">
-                        <span class="tag">TRAVEL</span>
-                        <span class="date">2021</span>
-                    </div>
-                    <h3>New York Upstate</h3>
-                    <p>Notes: Observations on the persistence of geographical archetypes. The Finger Lakes region logic.</p>
-                </div>
-            </div>
-        </section>
+ <section id="travel" class="tab-content">
+    <div class="upload-stub archive-card" style="border: 1px dashed var(--pp-green); background: var(--pp-green-soft);">
+        <h4 style="font-size: 0.8rem; margin-bottom: 15px;">[ ADD NEW TRAVEL LOG ]</h4>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <input type="file" id="pic-upload" accept="image/*" style="font-size: 0.7rem;">
+            <input type="text" id="pic-note" placeholder="Enter notes (e.g. New York Upstate-2021)" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+            <input type="text" id="pic-tag" placeholder="Tags (e.g. #Nature #Logic)" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+            <button onclick="previewTravel()" class="expand-btn" style="margin-top: 5px;">Render Preview</button>
+        </div>
+    </div>
+
+    <div id="photo-feed">
+ <div class="archive-card photo-item">
+    <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
+        <img src="pics/1.jpeg" style="width: 100%;" onerror="this.src='https://via.placeholder.com/800x400?text=Check+Path+Pics/1.jpeg'">
+    </div>
+    <div class="card-header">
+        <span class="tag">#TRAVEL</span>
+        <span class="date">2021</span>
+    </div>
+    <h3>New York Upstate</h3>
+    <p>Notes: Observations on the persistence of geographical archetypes. The Finger Lakes region logic.</p>
+</div>
+    </div>
+</section>
     </main>
 
     <script>
@@ -118,6 +146,74 @@
                 btnText.textContent = 'Error';
             }
         }
+ // 1. 定义心理学博文索引 (blogs/psych/ 目录下)
+const psychFiles = [
+    { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026" },
+    { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026" },
+    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2025" }
+];
+
+window.onload = function() {
+    renderPsychCards();
+    // 如果你有其他初始化函数也可以放在这里
+};
+
+function renderPsychCards() {
+    const container = document.getElementById('psych-container');
+    if(!container) return;
+
+    psychFiles.forEach(file => {
+        const card = `
+            <div class="archive-card">
+                <div class="card-header">
+                    <span class="tag">${file.tag}</span>
+                    <span class="date">${file.date}</span>
+                </div>
+                <h3>${file.title}</h3>
+                <p class="preview-text">System analysis pending terminal sync...</p>
+                
+                <button class="expand-btn" onclick="toggleMD('psych/${file.id}', this)">
+                    <span class="btn-text">View Analysis</span>
+                </button>
+                <div id="psych/${file.id}-content" class="md-render-area"></div>
+            </div>`;
+        container.innerHTML += card;
+    });
+}
+
+// 增强版的 toggleMD，支持子目录
+async function toggleMD(filePath, btn) {
+    const area = document.getElementById(`${filePath}-content`);
+    const btnText = btn.querySelector('.btn-text');
+    
+    if (area.classList.contains('open')) {
+        area.classList.remove('open');
+        btnText.textContent = 'View Analysis';
+        return;
+    }
+
+    try {
+        btnText.textContent = 'Decrypting...';
+        const res = await fetch(`blogs/${filePath}.md`);
+        if (!res.ok) throw new Error();
+        const text = await res.text();
+        
+        // 渲染 Markdown
+        area.innerHTML = marked.parse(text);
+        area.classList.add('open');
+        btnText.textContent = 'Collapse';
+    } catch (err) {
+        // 如果文件还没上传，显示一个符合你风格的 Drafting 提示
+        area.innerHTML = `
+            <div style="padding: 20px; border: 1px dashed #eee; color: #999; font-size: 0.85rem;">
+                > [LOG]: File "blogs/${filePath}.md" is currently being drafted in the local buffer...
+                <br>> Status: Awaiting Git Push.
+            </div>`;
+        area.classList.add('open');
+        btnText.textContent = 'In Progress';
+    }
+}
+
 
         function generateSnippet() {
             const tag = document.getElementById('in-tag').value || 'NEW SCRIPTURE';
@@ -145,6 +241,29 @@
             document.getElementById('output-area').style.display = 'block';
             navigator.clipboard.writeText(snippet);
         }
+        function previewTravel() {
+    const fileInput = document.getElementById('pic-upload');
+    const note = document.getElementById('pic-note').value;
+    const tag = document.getElementById('pic-tag').value || '#TRAVEL';
+    const feed = document.getElementById('photo-feed');
+
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const newCard = `
+                <div class="archive-card photo-item">
+                    <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
+                        <img src="${e.target.result}" style="width: 100%;">
+                    </div>
+                    <div class="card-header"><span class="tag">${tag}</span><span class="date">JUST NOW</span></div>
+                    <p><strong>Note:</strong> ${note}</p>
+                </div>`;
+            feed.insertAdjacentHTML('afterbegin', newCard);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
     </script>
+    
 </body>
 </html>

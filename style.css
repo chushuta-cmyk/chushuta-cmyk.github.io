@@ -1,102 +1,35 @@
 :root {
-    --bg: #050505;
-    --card-bg: #111111;
-    --text-primary: #ffffff;
-    --text-secondary: #a1a1a1;
-    --accent: #3b82f6;
-    --glass: rgba(255, 255, 255, 0.03);
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #000000;
+    --sidebar-w: 350px;
 }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; display: flex; }
 
-body {
-    background-color: var(--bg);
-    color: var(--text-primary);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* 导航渲染 */
-.glass-nav {
+/* 侧边栏 - 所有页面通用 */
+.sidebar {
+    width: var(--sidebar-w);
+    height: 100vh;
     position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    z-index: 1000;
-}
-
-.nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    border-right: 1.5px solid #eee;
+    padding: 60px 40px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 0 40px;
 }
+.name-brand { font-weight: 900; font-size: 2rem; letter-spacing: -1.5px; text-decoration: none; color: #000; }
+.nav-list { list-style: none; margin-top: 50px; }
+.nav-list li { margin-bottom: 25px; }
+.nav-list a { text-decoration: none; color: #999; font-size: 0.9rem; font-weight: 700; transition: 0.3s; text-transform: uppercase; }
+.nav-list a:hover, .nav-list a.active { color: #000; padding-left: 8px; }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    align-items: center;
-}
+/* 内容区 */
+.main-content { margin-left: var(--sidebar-w); width: 100%; padding: 80px 60px; }
+.page-title { font-size: 0.7rem; letter-spacing: 4px; color: #ccc; margin-bottom: 40px; text-transform: uppercase; }
+h2 { font-size: 3rem; font-weight: 800; margin-bottom: 30px; letter-spacing: -1px; }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
-
-/* Profile 页面布局 */
-.hero-section {
-    padding: 160px 40px 100px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-container { display: flex; align-items: center; gap: 80px; }
-
-h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 24px; }
-
-.gradient-text {
-    background: linear-gradient(90deg, #3b82f6, #2dd4bf);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.intro { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; }
-
-.status-badge {
-    background: var(--glass);
-    border: 1px solid rgba(59, 130, 246, 0.5);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    color: var(--accent);
-}
-
-/* Bento Grid 渲染 */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.bento-item {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.4s ease;
-}
-
-.bento-item:hover { border-color: var(--accent); transform: translateY(-5px); }
+/* 模块化组件 */
+.card { background: #f9f9f9; padding: 40px; margin-bottom: 20px; border-radius: 4px; transition: 0.3s; }
+.card:hover { background: #000; color: #fff; }
+.btn-black { display: inline-block; padding: 12px 24px; background: #000; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.8rem; margin-top: 20px; }

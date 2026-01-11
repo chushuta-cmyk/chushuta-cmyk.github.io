@@ -149,13 +149,15 @@
  // 1. 定义心理学博文索引 (blogs/psych/ 目录下)
 // 1. 定义博文索引，增加 dir 字段区分目录
 const psychFiles = [
+    // Psychology 模块
     { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026", dir: 'psych' },
     { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026", dir: 'psych' },
-    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2026", dir: 'psych' },
-    { id: 'stoic_algorithms', title: "Stoic Algorithms", tag: "#PHILOSOPHY", date: "2026", dir: 'philosophy' }, // 哲学目录
-    { id: 'the_mirror', title: "The Mirror Without Dust", tag: "#SUFISM", date: "2026", dir: 'philosophy' }    // 哲学目录
+    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2025", dir: 'psych' },
+    
+    // Philosophy 模块 (新增)
+    { id: 'the_mask_of_inshallah', title: "The Mask of Inshallah", tag: "#SUFISM", date: "2026", dir: 'philosophy' },
+    { id: 'the_well', title: "The Well in the Desert", tag: "#STOICISM", date: "2026", dir: 'philosophy' }
 ];
-
 window.onload = function() {
     renderPsychCards();
     // 如果你有其他初始化函数也可以放在这里
@@ -164,12 +166,13 @@ window.onload = function() {
 function renderPsychCards() {
     const container = document.getElementById('psych-container');
     if(!container) return;
-    container.innerHTML = ''; // 清空加载提示
+    container.innerHTML = ''; 
 
     psychFiles.forEach(file => {
-        // 拼接路径：dir/id
-        const fullPath = `${file.dir}/${file.id}`; 
-        
+        // 动态构建路径：如果定义了 dir 就用 dir，否则默认在 psych 下
+        const subDir = file.dir || 'psych';
+        const fullPath = `${subDir}/${file.id}`;
+
         const card = `
             <div class="archive-card">
                 <div class="card-header">
@@ -177,8 +180,7 @@ function renderPsychCards() {
                     <span class="date">${file.date}</span>
                 </div>
                 <h3>${file.title}</h3>
-                <p class="preview-text">System analysis pending terminal sync...</p>
-                
+                <p class="preview-text">Decoupling essence from noise in ${subDir}...</p>
                 <button class="expand-btn" onclick="toggleMD('${fullPath}', this)">
                     <span class="btn-text">View Analysis</span>
                 </button>

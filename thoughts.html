@@ -148,20 +148,19 @@
         }
  // 1. 定义心理学博文索引 (blogs/psych/ 目录下)
 // 1. 定义博文索引，增加 dir 字段区分目录
+// 1. 修正后的博文索引（已补全逗号）
 const psychFiles = [
-    // Psychology 模块
     { 
         id: 'the_logic_of_ayyub', 
         title: "The Logic of Ayyub (Job)", 
         tag: "#SPIRITUAL_LOGIC", 
         date: "2025-12", 
-        dir: 'religion' // 建议放在 religion 目录下
+        dir: 'philosophy' 
     },
     { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026", dir: 'psych' },
     { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026", dir: 'psych' },
     { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2025", dir: 'psych' },
-    { id: 'rumi_and_arabi', title: "The Alchemy of Love: Rumi and the Infinite Heart", tag: "#SPIRITUAL_AWAKENING", date: "2025", dir: 'philosophy' }
-    // Philosophy 模块 (新增)
+    { id: 'rumi_and_arabi', title: "The Alchemy of Love: Rumi and the Infinite Heart", tag: "#SPIRITUAL_AWAKENING", date: "2025", dir: 'philosophy' }, // 补上了这里的逗号
     { id: 'the_mask_of_inshallah', title: "The Mask of Inshallah", tag: "#SUFISM", date: "2026", dir: 'philosophy' },
     { id: 'the_well', title: "The Well in the Desert", tag: "#STOICISM", date: "2026", dir: 'philosophy' },
     { 
@@ -172,10 +171,11 @@ const psychFiles = [
         dir: 'philosophy' 
     }
 ];
-window.onload = function() {
+
+// 2. 使用更稳健的初始化方式
+document.addEventListener('DOMContentLoaded', function() {
     renderPsychCards();
-    // 如果你有其他初始化函数也可以放在这里
-};
+});
 
 function renderPsychCards() {
     const container = document.getElementById('psych-container');
@@ -183,7 +183,6 @@ function renderPsychCards() {
     container.innerHTML = ''; 
 
     psychFiles.forEach(file => {
-        // 动态构建路径：如果定义了 dir 就用 dir，否则默认在 psych 下
         const subDir = file.dir || 'psych';
         const fullPath = `${subDir}/${file.id}`;
 

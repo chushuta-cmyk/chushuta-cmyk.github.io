@@ -54,7 +54,7 @@
         <p class="translation">"He grants wisdom to whom He wills; and whoever has been granted wisdom has certainly been granted much good."</p>
     </div>
     <button class="expand-btn" onclick="toggleMD('surah_al_baqarah_269', this)">
-        <span class="btn-text">View Analysis</span>
+        <span class="btn-text">View Texts</span>
     </button>
     <div id="surah_al_baqarah_269-content" class="md-render-area"></div>
 </div>
@@ -69,7 +69,7 @@
         <p class="translation">"Sufficient for us is Allah, and He is the best Disposer of affairs."</p>
     </div>
     <button class="expand-btn" onclick="toggleMD('hasbunallah_logic', this)">
-        <span class="btn-text">View Analysis</span>
+        <span class="btn-text">View Texts</span>
     </button>
     <div id="hasbunallah_logic-content" class="md-render-area"></div>
 </div>
@@ -130,7 +130,7 @@
             const btnText = btn.querySelector('.btn-text');
             if (area.classList.contains('open')) {
                 area.classList.remove('open');
-                btnText.textContent = 'View Analysis';
+                btnText.textContent = 'View Texts';
                 return;
             }
             try {
@@ -200,7 +200,6 @@ function renderPsychCards() {
         // 动态构建路径：如果定义了 dir 就用 dir，否则默认在 psych 下
         const subDir = file.dir || 'psych';
         const fullPath = `${subDir}/${file.id}`;
-        const safeId = fullPath.replace(/\//g, '_');
 
         const card = `
             <div class="archive-card">
@@ -211,9 +210,10 @@ function renderPsychCards() {
                 <h3>${file.title}</h3>
                 <p class="preview-text">Decoupling essence from noise in ${subDir}...</p>
                 <button class="expand-btn" onclick="toggleMD('${fullPath}', this)">
-                    <span class="btn-text">View Analysis</span>
+                    <span class="btn-text">View Texts</span>
                 </button>
-<div id="${safeId}-content" class="md-render-area"></div>            </div>`;
+                <div id="${fullPath}-content" class="md-render-area"></div>
+            </div>`;
         container.innerHTML += card;
     });
 }
@@ -225,7 +225,7 @@ async function toggleMD(filePath, btn) {
     
     if (area.classList.contains('open')) {
         area.classList.remove('open');
-        btnText.textContent = 'View Analysis';
+        btnText.textContent = 'View Texts';
         return;
     }
 
@@ -268,7 +268,7 @@ async function toggleMD(filePath, btn) {
         <p class="translation">"${trans}"</p>
     </div>
     <button class="expand-btn" onclick="toggleMD('${file}', this)">
-        <span class="btn-text">View Analysis</span>
+        <span class="btn-text">View Texts</span>
     </button>
     <div id="${file}-content" class="md-render-area"></div>
 </div>`;

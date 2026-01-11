@@ -147,11 +147,13 @@
             }
         }
  // 1. 定义心理学博文索引 (blogs/psych/ 目录下)
+// 1. 定义博文索引，增加 dir 字段区分目录
 const psychFiles = [
-    { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026" },
-    { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026" },
-    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2025" },
-    { id: 'stoic_algorithms', title: "Stoic Algorithms", tag: "#PHILOSOPHY", date: "2026" } // 新增
+    { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026", dir: 'psych' },
+    { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026", dir: 'psych' },
+    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2026", dir: 'psych' },
+    { id: 'stoic_algorithms', title: "Stoic Algorithms", tag: "#PHILOSOPHY", date: "2026", dir: 'philosophy' }, // 哲学目录
+    { id: 'the_mirror', title: "The Mirror Without Dust", tag: "#SUFISM", date: "2026", dir: 'philosophy' }    // 哲学目录
 ];
 
 window.onload = function() {
@@ -162,8 +164,12 @@ window.onload = function() {
 function renderPsychCards() {
     const container = document.getElementById('psych-container');
     if(!container) return;
+    container.innerHTML = ''; // 清空加载提示
 
     psychFiles.forEach(file => {
+        // 拼接路径：dir/id
+        const fullPath = `${file.dir}/${file.id}`; 
+        
         const card = `
             <div class="archive-card">
                 <div class="card-header">
@@ -173,10 +179,10 @@ function renderPsychCards() {
                 <h3>${file.title}</h3>
                 <p class="preview-text">System analysis pending terminal sync...</p>
                 
-                <button class="expand-btn" onclick="toggleMD('psych/${file.id}', this)">
+                <button class="expand-btn" onclick="toggleMD('${fullPath}', this)">
                     <span class="btn-text">View Analysis</span>
                 </button>
-                <div id="psych/${file.id}-content" class="md-render-area"></div>
+                <div id="${fullPath}-content" class="md-render-area"></div>
             </div>`;
         container.innerHTML += card;
     });

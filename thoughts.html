@@ -186,6 +186,7 @@ function renderPsychCards() {
         // 动态构建路径：如果定义了 dir 就用 dir，否则默认在 psych 下
         const subDir = file.dir || 'psych';
         const fullPath = `${subDir}/${file.id}`;
+        const safeId = fullPath.replace(/\//g, '_');
 
         const card = `
             <div class="archive-card">
@@ -198,8 +199,7 @@ function renderPsychCards() {
                 <button class="expand-btn" onclick="toggleMD('${fullPath}', this)">
                     <span class="btn-text">View Analysis</span>
                 </button>
-                <div id="${fullPath}-content" class="md-render-area"></div>
-            </div>`;
+<div id="${safeId}-content" class="md-render-area"></div>            </div>`;
         container.innerHTML += card;
     });
 }

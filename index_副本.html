@@ -77,83 +77,61 @@
                     <li><strong>Clinical Psychology & Family Therapy (CUPL)</strong></li>
                 </ul>
             </section>
- <section class="gallery-static">
+            <section class="gallery-soul">
     <div class="quote-header">
-        <h2 class="rumi-quote">"The soul hears things the mind does not understand."</h2>
-        <p class="sufi-subtitle">— 谈楚抒 / Karama's Archive —</p>
+        <h2 class="rumi-quote">"The wound is the place where the Light enters you."</h2>
+        <p class="sufi-subtitle">— Mevlana Rumi</p>
     </div>
 
-    <div class="photo-quad-grid">
-        <div class="quad-item">
-            <img src="pics/A.jpg" alt="Awakening">
-            <div class="quad-overlay">The Seed of Awakening</div>
+<section class="gallery-container">
+    <div class="quote-header" style="text-align: center; margin-bottom: 30px;">
+        <h2 style="font-weight: 300; font-style: italic; font-size: 1.5rem;">"The soul hears things the mind does not understand."</h2>
+        <p style="font-size: 0.8rem; color: #95a5a6; letter-spacing: 1px;">— A Galaxy of Equal Nodes: Toward Awakening —</p>
+    </div>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('pics/A.jpg');">
+                <div class="slide-content">The Seed of Awakening</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('pics/B.jpeg');">
+                <div class="slide-content">Sovereignty of Soul</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('pics/C.jpeg');">
+                <div class="slide-content">Symphony of Equals</div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('pics/D.jpeg');">
+                <div class="slide-content">The Light Enters</div>
+            </div>
         </div>
-        <div class="quad-item">
-            <img src="pics/B.jpeg" alt="Sovereignty">
-            <div class="quad-overlay">Sovereignty of Soul</div>
-        </div>
-        <div class="quad-item">
-            <img src="pics/C.jpeg" alt="Symphony">
-            <div class="quad-overlay">Symphony of Equals</div>
-        </div>
-        <div class="quad-item">
-            <img src="pics/D.jpeg" alt="Light">
-            <div class="quad-overlay">The Light Enters</div>
-        </div>
+        <div class="swiper-pagination"></div>
     </div>
 </section>
 
-<style>
-.gallery-static {
-    padding: 60px 20px;
-    text-align: center;
-    background: #fff;
-}
-.photo-quad-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 田字形核心：两列 */
-    gap: 15px;
-    max-width: 800px;
-    margin: 40px auto;
-}
-.quad-item {
-    position: relative;
-    aspect-ratio: 1 / 1; /* 强制正方形 */
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.quad-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-.quad-item:hover img {
-    transform: scale(1.05);
-}
-.quad-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 15px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-.rumi-quote {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.6rem;
-    color: #2c3e50;
-}
-.sufi-subtitle {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    color: #95a5a6;
-    text-transform: uppercase;
-}
-</style>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow", 
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto", // 关键：自动宽度才能实现左右滑动感
+      loop: true,
+      coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      }
+    });
+  });
+</script>
 
 <style>
 .gallery-soul {

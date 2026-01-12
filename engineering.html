@@ -1,8 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>Engineering | Karama</title>
+    <meta charset="UTF-8">
+    <title>Engineering | Karama</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #4a5d4e;
+            --soft-green: #f1f3f1;
+            --border-light: #e0e4e0;
+        }
+
+        .main-content { padding: 60px 10%; }
+        
+        .project-frame {
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--brand-green);
+            padding: 30px;
+            margin-bottom: 40px;
+            background: #fff;
+            transition: all 0.3s ease;
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .project-frame:hover {
+            transform: translateX(10px);
+            box-shadow: 15px 15px 0px var(--soft-green);
+            border-color: var(--brand-green);
+        }
+
+        .meta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--brand-green);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            padding-left: 18px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            background: var(--soft-green);
+            border-radius: 4px;
+            color: var(--brand-green);
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <aside class="sidebar">
@@ -19,22 +90,75 @@
                 <li><a href="thoughts.html">04. Thoughts/Travel</a></li>
             </ul>
         </div>
+        <div class="sidebar-footer"><p>Hasbunallahu wa ni’mal wakil.</p></div>
     </aside>
 
     <main class="main-content">
-        <p class="page-title">Systems & Pipelines / 03</p>
-        <h2>Industrial <br>Scalability.</h2>
+        <p class="page-title">Career & Engineering / 03</p>
+        <h2 style="font-size: 3.5rem; margin-bottom: 50px;">Architectural <br>Systems.</h2>
 
-        <div class="card">
-            <div class="meta">HSBC — DATA ARCHITECTURE</div>
-            <h3>Automated NLP/OCR Pipeline</h3>
-            <p>Engineered high-concurrency document processing systems for global financial data. Integrated deep learning models with Spark-based ETL workflows.</p>
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>MAR 2024 — PRESENT</span>
+                <span>HSBC | SENIOR DATA ANALYST</span>
+            </div>
+            <h3 class="project-title">AI-Driven Financial Intelligence Architecture</h3>
+            <ul class="project-desc">
+                <li>Engineered an automated OCR + NLP pipeline for financial report parsing, achieving a 60% reduction in manual workload.</li>
+                <li>Optimized large-scale ETL workflows using Spark, Hive, and Airflow, reducing processing windows by 30% for real-time decision stability.</li>
+                <li>Integrated Large Language Model (LLM) APIs to automate multi-dimensional text mining and risk entity recognition.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag">Python</span><span class="tag">Spark</span><span class="tag">Airflow</span><span class="tag">NLP</span><span class="tag">OCR</span><span class="tag">LLM integration</span>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="meta">INFRASTRUCTURE</div>
-            <h3>DevOps & Cloud Native</h3>
-            <p>Deployment of containerized bioinformatic tools using Docker/Kubernetes, ensuring reproducible research environments across distributed clusters.</p>
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>OCT 2023 — PRESENT</span>
+                <span>INDEPENDENT | BIOINFORMATICS RESEARCHER</span>
+            </div>
+            <h3 class="project-title">Single-Cell Atlas & Explainable AI for Oncology</h3>
+            <ul class="project-desc">
+                <li>Spearheaded scRNA-seq analysis for NPC and EBV+ cohorts, utilizing Scanpy and Palantir for immune trajectory inference.</li>
+                <li>Developed a robust survival prediction model using XGBoost + CoxPH, leveraging SHAP values to decode the "black box" of clinical algorithms.</li>
+                <li>Managed the full project lifecycle independently, from raw data processing to deep learning (CNN/RNN) model deployment.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag">Scanpy</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">CoxPH</span><span class="tag">Survival Analysis</span>
+            </div>
+        </div>
+
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>PREVIOUS ROLE</span>
+                <span>CLOUDNA | BIOINFORMATICS ANALYSIS</span>
+            </div>
+            <h3 class="project-title">Multi-Omics Automation & Containerized Infrastructure</h3>
+            <ul class="project-desc">
+                <li>Designed automated analysis pipelines for WGS, WES, and DNA Methylation datasets, significantly increasing processing throughput.</li>
+                <li>Implemented Docker-based containerization for bioinformatics toolchains to ensure environment consistency across distributed systems.</li>
+                <li>Co-developed production-grade pipelines using Nextflow and Snakemake for large-scale clinical data management.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag">WGS/WES</span><span class="tag">Docker</span><span class="tag">Snakemake</span><span class="tag">Nextflow</span><span class="tag">Methylation</span>
+            </div>
+        </div>
+
+        <div class="project-frame" style="opacity: 0.85;">
+            <div class="meta-header">
+                <span>FOUNDATION</span>
+                <span>UNIVERSITY AT BUFFALO & MONASH</span>
+            </div>
+            <h3 class="project-title">Cross-Disciplinary Scientific Training</h3>
+            <ul class="project-desc">
+                <li>Master of IT (Monash): Specialized in Software Development, Machine Learning, and Database Architectures.</li>
+                <li>Bachelor of Biological Sciences & Psychology (UB): Conducted research in evolutionary genetics, molecular phylogeny, and biopsychology.</li>
+                <li>Integrated psychological insights with neurogenomics to approach Major Depressive Disorder (MDD) from a holistic perspective.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag">Evolutionary Genetics</span><span class="tag">IT Architecture</span><span class="tag">Machine Learning</span><span class="tag">Neuroscience</span>
+            </div>
         </div>
     </main>
 </body>

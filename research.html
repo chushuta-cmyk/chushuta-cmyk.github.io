@@ -1,9 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>Research | Karama</title>
+    <meta charset="UTF-8">
+    <title>Research | Karama</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #4a5d4e; /* 雅致的深橄榄绿 */
+            --soft-green: #f1f3f1;
+            --border-light: #e0e4e0;
+        }
+
+        .main-content { padding: 60px 10%; }
+        
+        /* 优雅的裱框设计 */
+        .project-frame {
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--brand-green); /* 侧边重色强调 */
+            padding: 30px;
+            margin-bottom: 40px;
+            background: #fff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .project-frame:hover {
+            transform: translateX(10px);
+            box-shadow: 15px 15px 0px var(--soft-green);
+            border-color: var(--brand-green);
+        }
+
+        .meta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--brand-green);
+            font-weight: 600;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .tag-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            background: var(--soft-green);
+            border-radius: 4px;
+            color: var(--brand-green);
+            font-weight: 600;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--brand-green);
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <aside class="sidebar">
@@ -19,27 +96,62 @@
                 <li><a href="engineering.html">03. Engineering</a></li>
                 <li><a href="thoughts.html">04. Thoughts/Travel</a></li>
             </ul>
-            <div class="contact-info">
-                <a href="mailto:chushuta@gmail.com">chushuta@gmail.com</a>
-            </div>
         </div>
         <div class="sidebar-footer"><p>Hasbunallahu wa ni’mal wakil.</p></div>
     </aside>
 
     <main class="main-content">
         <p class="page-title">Genomics & Immunology / 02</p>
-        <h2>Biological <br>Complexities.</h2>
+        <h2 style="font-size: 3.5rem; margin-bottom: 50px;">Biological <br>Complexities.</h2>
 
-        <div class="card">
-            <div class="meta">PROJECT — 01</div>
-            <h3>EBV Reactivation in NPC</h3>
-            <p>Utilizing single-cell RNA-seq to decode the trajectory of viral reactivation in Nasopharyngeal Carcinoma. Focused on immune polarization and prognostic biomarkers.</p>
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>PROJECT — 01</span>
+                <span>VIRAL ONCOLOGY</span>
+            </div>
+            <h3 class="project-title">EBV Reactivation in NPC</h3>
+            <p class="project-desc">Decoding the single-cell trajectory of viral reactivation in Nasopharyngeal Carcinoma. Focused on immune polarization and the identification of high-risk prognostic biomarkers.</p>
+            <div class="tag-row">
+                <span class="tag">scRNA-seq</span><span class="tag">Immune-Oncology</span>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="meta">ALGORITHM — 02</div>
-            <h3>$s_{het}$ Integration</h3>
-            <p>Implementing selection coefficient ($s_{het}$) metrics into clinical variant interpretation pipelines to assess gene essentiality in population genetics.</p>
+        <a href="https://github.com/your-username/mdd-genomics" class="project-frame">
+            <div class="meta-header">
+                <span>PROJECT — 02</span>
+                <span>NEUROGENOMICS</span>
+            </div>
+            <h3 class="project-title">Genomic Architectures of MDD</h3>
+            <p class="project-desc">Integrating multi-omics data (WGS/RNA-seq) to identify novel endophenotypes in Major Depressive Disorder. A deep dive into the genetic cracks where light enters the neural pathways.</p>
+            <div class="tag-row">
+                <span class="tag">MDD</span><span class="tag">WGS</span><span class="tag">Multi-omics</span>
+            </div>
+            <span class="github-link">Explore Repository →</span>
+        </a>
+
+        <a href="#" class="project-frame">
+            <div class="meta-header">
+                <span>PROJECT — 03</span>
+                <span>POPULATION GENETICS</span>
+            </div>
+            <h3 class="project-title">GWAS Architecture: Soybean</h3>
+            <p class="project-desc">Implementation of an automated Snakemake pipeline for 500+ soybean accessions. Leveraging Mixed Linear Models (MLM) to dissect complex traits in agriculture.</p>
+            <div class="tag-row">
+                <span class="tag">GWAS</span><span class="tag">GCTA</span><span class="tag">LMM</span><span class="tag">Snakemake</span>
+            </div>
+            <span class="github-link">Explore Repository →</span>
+        </a>
+
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>PROJECT — 04</span>
+                <span>ALGORITHM</span>
+            </div>
+            <h3 class="project-title">$s_{het}$ Metric Integration</h3>
+            <p class="project-desc">Integrating selection coefficient metrics into clinical variant interpretation to assess gene essentiality and purifying selection in human populations.</p>
+            <div class="tag-row">
+                <span class="tag">Selection Coefficient</span><span class="tag">Population Genetics</span>
+            </div>
         </div>
     </main>
 </body>

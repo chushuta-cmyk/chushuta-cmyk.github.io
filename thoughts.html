@@ -39,7 +39,16 @@
         </nav>
 
 <section id="psych" class="tab-content active">
-    <div id="psych-container"></div>
+    <div class="wechat-style-layout">
+        <aside class="calendar-sidebar">
+            <div class="archive-header">ARCHIVE</div>
+            <div id="calendar-menu">
+                </div>
+            <button class="reset-filter-btn" onclick="renderPsychCards()">Show All</button>
+        </aside>
+
+        <div id="psych-container" class="feed-container"></div>
+    </div>
 </section>
 
         <section id="religion" class="tab-content">
@@ -225,6 +234,19 @@
 </section>
     </main>
 
+    <style>
+    /* 小日历样式 */
+    .calendar-sidebar { padding: 12px; }
+    #calendar-menu { font-size: 0.9rem; }
+    .year-group { margin-bottom: 12px; }
+    .year-label { font-weight: 700; cursor: pointer; margin-bottom: 6px; color: var(--pp-green); }
+    .day-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+    .day-item { background: #f7f7f7; padding: 6px 8px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem; color: #333; box-shadow: 0 1px 0 rgba(0,0,0,0.03); }
+    .day-item:hover { background: #eef; }
+    .badge { background: #333; color: #fff; padding: 2px 6px; border-radius: 999px; font-size: 0.75rem; }
+    .day-label { font-weight: 600; }
+    </style>
+
     <script>
         function showTab(id) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -338,16 +360,16 @@ const psychFiles = [
         id: 'the_logic_of_ayyub', 
         title: "The Logic of Ayyub (Job)", 
         tag: "#SPIRITUAL_LOGIC", 
-        date: "2025-12", 
+        date: "2026-01-10", 
         dir: 'religion' // 建议放在 religion 目录下
     },
-    { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026", dir: 'psych' },
-    { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026", dir: 'psych' },
-    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2025", dir: 'psych' },
-    { id: 'rumi_and_arabi', title: "The Alchemy of Love: Rumi and the Infinite Heart", tag: "#SPIRITUAL_AWAKENING", date: "2025", dir: 'philosophy' },
+    { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026-01-10", dir: 'psych' },
+    { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026-01-10", dir: 'psych' },
+    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2026-01-10", dir: 'psych' },
+    { id: 'rumi_and_arabi', title: "The Alchemy of Love: Rumi and the Infinite Heart", tag: "#SPIRITUAL_AWAKENING", date: "2026-01-10", dir: 'philosophy' },
     // Philosophy 模块 (新增)
-    { id: 'the_mask_of_inshallah', title: "The Mask of Inshallah", tag: "#SUFISM", date: "2026", dir: 'philosophy' },
-    { id: 'the_well', title: "The Well in the Desert", tag: "#STOICISM", date: "2026", dir: 'philosophy' },
+    { id: 'the_mask_of_inshallah', title: "The Mask of Inshallah", tag: "#SUFISM", date: "2026-01-12", dir: 'philosophy' },
+    { id: 'the_well', title: "The Well in the Desert", tag: "#STOICISM", date: "2026-01-11", dir: 'philosophy' },
     { 
         id: 'the_architecture_of_freedom', 
         title: "The Architecture of Freedom", 
@@ -387,6 +409,88 @@ function renderPsychCards() {
         container.innerHTML += card;
     });
 }
+
+function initPsychSection() {
+    renderCalendarMenu();
+    renderPsychCards(); // 默认显示全部
+}
+
+// 生成侧边栏日历菜单（按日显示并计数）
+function renderCalendarMenu() {
+    const menu = document.getElementById('calendar-menu');
+    const dateMap = {}; // 存储 { "2026": { "01-12": count, ... }, ... }
+
+    // 只统计完整的 YYYY-MM-DD 日期
+    psychFiles.forEach(f => {
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(f.date)) return;
+        const [year, month, day] = f.date.split('-');
+        if (!dateMap[year]) dateMap[year] = {};
+        const md = `${month}-${day}`;
+        dateMap[year][md] = (dateMap[year][md] || 0) + 1;
+    });
+
+    menu.innerHTML = '';
+    Object.keys(dateMap).sort((a,b) => b-a).forEach(year => {
+        let html = `<div class="year-group">
+            <div class="year-label" onclick="filterByDate('${year}')">${year}</div>
+            <ul class="day-list">`;
+        const days = Object.keys(dateMap[year]).sort((a,b) => {
+            return new Date(`${year}-${b}`) - new Date(`${year}-${a}`);
+        });
+        days.forEach(md => {
+            const [mm, dd] = md.split('-');
+            const count = dateMap[year][md];
+            html += `<li class="day-item" onclick="filterByDate('${year}', '${mm}', '${dd}')"><span class="day-label">${mm}-${dd}</span><span class="badge">${count}</span></li>`;
+        });
+        html += `</ul></div>`;
+        menu.innerHTML += html;
+    });
+} 
+
+// 筛选功能（支持年 / 月 / 日）
+function filterByDate(year, month = null, day = null) {
+    const filtered = psychFiles.filter(f => {
+        if (day) return f.date === `${year}-${month}-${day}`;
+        if (month) return f.date.startsWith(`${year}-${month}`);
+        return f.date.startsWith(year);
+    });
+    renderPsychCards(filtered);
+} 
+
+// 朋友圈风格的渲染：同一天的只显示一个大日期
+function renderPsychCards(data = psychFiles) {
+    const container = document.getElementById('psych-container');
+    container.innerHTML = '';
+    
+    let lastDate = "";
+    const sortedData = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    sortedData.forEach(file => {
+        // 如果是新的一天，增加日期标题
+        if (file.date !== lastDate) {
+            container.innerHTML += `<div class="date-divider">${file.date}</div>`;
+            lastDate = file.date;
+        }
+
+        const subDir = file.dir || 'psych';
+        const card = `
+            <div class="archive-card" style="margin-top:0; margin-bottom:20px;">
+                <div class="card-header"><span class="tag">${file.tag}</span></div>
+                <h3>${file.title}</h3>
+                <button class="expand-btn" onclick="toggleMD('${subDir}/${file.id}', this)">
+                    <span class="btn-text">View Texts</span>
+                </button>
+                <div id="${subDir}/${file.id}-content" class="md-render-area"></div>
+            </div>`;
+        container.innerHTML += card;
+    });
+}
+
+// 修改 window.onload
+window.onload = function() {
+    initPsychSection();
+};
+
 
 // 增强版的 toggleMD，支持子目录
 async function toggleMD(filePath, btn) {

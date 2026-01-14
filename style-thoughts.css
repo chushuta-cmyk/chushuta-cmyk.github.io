@@ -121,3 +121,48 @@ p { color: #555; line-height: 1.8; font-size: 0.95rem; }
 .gen-form { display: flex; flex-direction: column; gap: 12px; }
 .gen-form input, .gen-form textarea { padding: 12px; border: 1px solid #eee; border-radius: 10px; font-family: inherit; }
 .gen-btn { background: var(--text-main); color: #fff; padding: 15px; border: none; border-radius: 10px; cursor: pointer; font-weight: 800; }
+
+.wechat-style-layout {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.calendar-sidebar {
+    width: 120px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    border-left: 2px solid var(--pp-green);
+    padding-left: 20px;
+}
+
+.archive-header {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--pp-green);
+    margin-bottom: 20px;
+}
+
+.year-group { margin-bottom: 15px; }
+.year-label { font-weight: bold; font-size: 1rem; cursor: pointer; }
+.month-list { list-style: none; padding-left: 10px; margin-top: 5px; }
+.month-item { 
+    font-size: 0.85rem; 
+    color: #888; 
+    cursor: pointer; 
+    padding: 3px 0;
+}
+.month-item:hover { color: var(--pp-green); }
+
+.feed-container { flex-grow: 1; }
+
+/* 适配微信朋友圈风格的日期分割线 */
+.date-divider {
+    font-family: monospace;
+    font-size: 1.2rem;
+    margin: 40px 0 20px 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}

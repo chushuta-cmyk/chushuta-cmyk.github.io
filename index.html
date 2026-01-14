@@ -102,7 +102,15 @@
         </div>
     </div>
 </section>
-
+<div class="site-status-bar">
+    <span class="pulse-dot"></span>
+    <span id="live-date-en"></span>
+    <span class="status-sep">/</span>
+    <span class="visitor-stats">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; opacity:0.6;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        READS: <span id="visit-count-num">0</span>
+    </span>
+</div>
 <style>
 .gallery-static {
     padding: 60px 20px;
@@ -154,6 +162,25 @@
     text-transform: uppercase;
 }
 </style>
+<script>
+function initStatus() {
+    // 1. 设置日期 (格式: Jan 14, 2026)
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    const dateEl = document.getElementById('live-date-en');
+    if (dateEl) dateEl.innerText = dateStr;
+
+    // 2. 模拟访问量 (本地存储)
+    let visits = localStorage.getItem('karama_site_clicks') || 1024; // 初始基数
+    visits = parseInt(visits, 10) + 1;
+    localStorage.setItem('karama_site_clicks', visits);
+    const visitsEl = document.getElementById('visit-count-num');
+    if (visitsEl) visitsEl.innerText = visits.toLocaleString();
+}
+
+// 确保页面加载后运行
+document.addEventListener('DOMContentLoaded', initStatus);
+</script>
 
 <style>
 .gallery-soul {

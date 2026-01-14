@@ -16,6 +16,38 @@ body { background: var(--soft-bg); color: var(--text); font-family: 'Inter', san
     background: #fff; border-right: 1px solid var(--border);
     padding: 60px 40px; display: flex; flex-direction: column;
 }
+.site-status-bar {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; /* 小字体 */
+    color: #a0a0a0; /* 灰色 */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 999;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #52c41a; /* 极简绿 */
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(82, 196, 26, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(82, 196, 26, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(82, 196, 26, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(82, 196, 26, 0); }
+}
+
+.status-sep { opacity: 0.3; }
+.visitor-stats { display: flex; align-items: center; }
 
 .avatar { 
     width: 85px; height: 85px; border-radius: 20px; 

@@ -418,8 +418,7 @@ function renderPsychCards() {
     psychFiles.forEach(file => {
         // 动态构建路径：如果定义了 dir 就用 dir，否则默认在 psych 下
         const subDir = file.dir || 'psych';
-        const fullPath = `${subDir}/${file.id}`;
-
+        const filePathForToggle = `${subDir}/${file.id}`;
         const card = `
             <div class="archive-card">
                 <div class="card-header">
@@ -532,20 +531,20 @@ async function toggleMD(filePath, btn) {
 
     try {
         btnText.textContent = 'Decrypting...';
-        const res = await fetch(`blogs/${filePath}.md`);
-        if (!res.ok) throw new Error();
+        // 关键：确保路径在 GitHub 上是 blogs/religion/name.md 这种结构
+        const res = await fetch(`blogs/${filePath}.md`); 
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const text = await res.text();
         
-        // 渲染 Markdown
         area.innerHTML = marked.parse(text);
         area.classList.add('open');
         btnText.textContent = 'Collapse';
     } catch (err) {
-        // 如果文件还没上传，显示一个符合你风格的 Drafting 提示
+        console.error("Fetch failed for path:", `blogs/${filePath}.md`);
         area.innerHTML = `
             <div style="padding: 20px; border: 1px dashed #eee; color: #999; font-size: 0.85rem;">
-                > [LOG]: File "blogs/${filePath}.md" is currently being drafted in the local buffer...
-                <br>> Status: Awaiting Git Push.
+                > [ERROR]: File "blogs/${filePath}.md" not found.
+                <br>> Current Directory Sync: Failed.
             </div>`;
         area.classList.add('open');
         btnText.textContent = 'In Progress';

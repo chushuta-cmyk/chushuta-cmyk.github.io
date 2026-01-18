@@ -166,3 +166,108 @@ p { color: #555; line-height: 1.8; font-size: 0.95rem; }
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
+/* Markdown 深度美化 - 追加到 style-thoughts.css */
+
+.md-render-area {
+    color: #444;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 标题美化：增加层次与间距 */
+.md-render-area h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 40px 0 20px 0;
+    line-height: 1.3;
+    border-bottom: 2px solid var(--pp-green-soft);
+    padding-bottom: 10px;
+}
+
+.md-render-area h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 35px 0 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.md-render-area h2::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    background: var(--pp-green);
+    margin-right: 12px;
+    border-radius: 2px;
+}
+
+.md-render-area h3 {
+    font-size: 1.1rem;
+    margin: 25px 0 10px 0;
+    color: var(--sage);
+}
+
+/* 正文与列表 */
+.md-render-area p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    color: #4a4a4a;
+}
+
+.md-render-area ul, .md-render-area ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.md-render-area li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* 引用块美化 (关键：针对你提到的宗教/哲学引用) */
+.md-render-area blockquote {
+    margin: 30px 0;
+    padding: 20px 25px;
+    background: #F8F9FA;
+    border-left: 4px solid var(--pp-green);
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.md-render-area blockquote p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* 强调色与代码行内样式 */
+.md-render-area strong {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.md-render-area code {
+    background: var(--pp-green-soft);
+    color: var(--pp-green);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85em;
+}
+
+/* 分割线 */
+.md-render-area hr {
+    border: none;
+    border-top: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* 针对图片在 MD 中的显示 */
+.md-render-area img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}

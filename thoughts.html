@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style-thoughts.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
+
 <body class="nordic-theme">
     <aside class="sidebar">
         <div class="sidebar-content">
@@ -38,137 +40,146 @@
             <button class="nav-btn" onclick="showTab('travel')">Travel & History</button>
         </nav>
 
-<section id="psych" class="tab-content active">
-    <div class="wechat-style-layout">
-        <aside class="calendar-sidebar">
-            <div class="archive-header">ARCHIVE</div>
-            <div id="calendar-menu">
-                </div>
-            <button class="reset-filter-btn" onclick="renderPsychCards()">Show All</button>
-        </aside>
+        <section id="psych" class="tab-content active">
+            <div class="wechat-style-layout">
+                <aside class="calendar-sidebar">
+                    <div class="archive-header">ARCHIVE</div>
+                    <div id="calendar-menu">
+                    </div>
+                    <button class="reset-filter-btn" onclick="renderPsychCards()">Show All</button>
+                </aside>
 
-        <div id="psych-container" class="feed-container"></div>
-    </div>
-</section>
+                <div id="psych-container" class="feed-container"></div>
+            </div>
+        </section>
 
         <section id="religion" class="tab-content">
             <div id="religion-grid" class="archive-grid">
                 <div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">WISDOM | LOGIC</span>
-        <span class="date">2026</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">يُؤْتِي الْحِكْمَةَ مَن يَشَاءُ ۚ وَمَن يُؤْتَ الْحِكْمَةَ فَقَدْ أُوتِيَ خَيْرًا كَثِيرًا</p>
-        <p class="translation">"He grants wisdom to whom He wills; and whoever has been granted wisdom has certainly been granted much good."</p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('surah_al_baqarah_269', this)">
-        <span class="btn-text">View Texts</span>
-    </button>
-    <div id="surah_al_baqarah_269-content" class="md-render-area"></div>
-</div>
-<div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">JUSTICE | REFUGE</span>
-        <span class="date">2026-01-12</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">يَا أَيُّهَا الَّذِينَ آمَنُوا اجْتَنِبُوا كَثِيرًا مِّنَ الظَّنِّ إِنَّ بَعْضَ الظَّنِّ إِثْمٌ</p>
-        <p class="translation">"O you who have believed, avoid much [negative] assumption. Indeed, some assumption is sin." </p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('refuge_from_judgment', this)">
-        <span class="btn-text">View Reflection</span>
-    </button>
-    <div id="refuge_from_judgment-content" class="md-render-area"></div>
-</div>
-
-<div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">GRACE | MERCY</span>
-        <span class="date">2026-01-12</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ * الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ * الرَّحْمَٰنِ الرَّحِيمِ</p>
-        <p class="translation">"In the name of Allah, the Most Gracious, the Most Merciful. All praise is due to Allah, Lord of all worlds. The Most Gracious, the Most Merciful."</p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('divine_mercy', this)">
-        <span class="btn-text">View Reflection</span>
-    </button>
-    <div id="divine_mercy-content" class="md-render-area"></div>
-</div>
-<div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">PATIENCE | REFLECTION</span>
-        <span class="date">2026-01-12</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">فَاصْبِرْ لِحُكْمِ رَبِّكَ وَلَا تَكُن كَصَاحِبِ الْحُوتِ</p>
-        <p class="translation">"So wait with patience for the decision of your Lord, and be not like the Companion of the Fish." </p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('wisdom_of_yunus', this)">
-        <span class="btn-text">View Detailed Lesson</span>
-    </button>
-    <div id="wisdom_of_yunus-content" class="md-render-area"></div>
-</div>
-<div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">EASE | SPIRITUAL_PATH</span>
-        <span class="date">2026-01-12</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا * إِنَّ مَعَ الْعُسْرِ يُسْرًا</p>
-        <p class="translation">"For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." (94:5-6)</p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('divine_ease', this)">
-        <span class="btn-text">View Sufi Reflection</span>
-    </button>
-    <div id="divine_ease-content" class="md-render-area"></div>
-</div>
-<div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">ETHICS | CRITIQUE</span>
-        <span class="date">2026-01-12</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">الأدب قبل العلم</p>
-        <p class="translation">"Adab (Etiquette) precedes Knowledge."</p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('adab_vs_arrogance', this)">
-        <span class="btn-text">View Analysis</span>
-    </button>
-    <div id="adab_vs_arrogance-content" class="md-render-area"></div>
-</div>
-
-<div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">PROTECTION | STOP-LOSS</span>
-        <span class="date">2026</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
-        <p class="translation">"Sufficient for us is Allah, and He is the best Disposer of affairs."</p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('hasbunallah_logic', this)">
-        <span class="btn-text">View Texts</span>
-    </button>
-    <div id="hasbunallah_logic-content" class="md-render-area"></div>
-</div>
-<div class="archive-card rel-item">
-    <div class="card-header">
-        <span class="tag">HEALING | FORGIVENESS</span>
-        <span class="date">2026-01-12</span>
-    </div>
-    <div class="script-block">
-        <p class="arabic-text" dir="rtl">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</p>
-        <p class="translation">"Unquestionably, by the remembrance of Allah do hearts find rest." </p>
-    </div>
-    <button class="expand-btn" onclick="toggleMD('architecture_of_peace', this)">
-        <span class="btn-text">View Peace Protocol</span>
-    </button>
-    <div id="architecture_of_peace-content" class="md-render-area"></div>
-</div>
+                    <div class="card-header">
+                        <span class="tag">WISDOM | LOGIC</span>
+                        <span class="date">2026</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">يُؤْتِي الْحِكْمَةَ مَن يَشَاءُ ۚ وَمَن يُؤْتَ الْحِكْمَةَ
+                            فَقَدْ أُوتِيَ خَيْرًا كَثِيرًا</p>
+                        <p class="translation">"He grants wisdom to whom He wills; and whoever has been granted wisdom
+                            has certainly been granted much good."</p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('surah_al_baqarah_269', this)">
+                        <span class="btn-text">View Texts</span>
+                    </button>
+                    <div id="surah_al_baqarah_269-content" class="md-render-area"></div>
                 </div>
-            
+                <div class="archive-card rel-item">
+                    <div class="card-header">
+                        <span class="tag">JUSTICE | REFUGE</span>
+                        <span class="date">2026-01-12</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">يَا أَيُّهَا الَّذِينَ آمَنُوا اجْتَنِبُوا كَثِيرًا مِّنَ
+                            الظَّنِّ إِنَّ بَعْضَ الظَّنِّ إِثْمٌ</p>
+                        <p class="translation">"O you who have believed, avoid much [negative] assumption. Indeed, some
+                            assumption is sin." </p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('refuge_from_judgment', this)">
+                        <span class="btn-text">View Reflection</span>
+                    </button>
+                    <div id="refuge_from_judgment-content" class="md-render-area"></div>
+                </div>
+
+                <div class="archive-card rel-item">
+                    <div class="card-header">
+                        <span class="tag">GRACE | MERCY</span>
+                        <span class="date">2026-01-12</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ * الْحَمْدُ لِلَّهِ
+                            رَبِّ الْعَالَمِينَ * الرَّحْمَٰنِ الرَّحِيمِ</p>
+                        <p class="translation">"In the name of Allah, the Most Gracious, the Most Merciful. All praise
+                            is due to Allah, Lord of all worlds. The Most Gracious, the Most Merciful."</p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('divine_mercy', this)">
+                        <span class="btn-text">View Reflection</span>
+                    </button>
+                    <div id="divine_mercy-content" class="md-render-area"></div>
+                </div>
+                <div class="archive-card rel-item">
+                    <div class="card-header">
+                        <span class="tag">PATIENCE | REFLECTION</span>
+                        <span class="date">2026-01-12</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">فَاصْبِرْ لِحُكْمِ رَبِّكَ وَلَا تَكُن كَصَاحِبِ الْحُوتِ</p>
+                        <p class="translation">"So wait with patience for the decision of your Lord, and be not like the
+                            Companion of the Fish." </p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('wisdom_of_yunus', this)">
+                        <span class="btn-text">View Detailed Lesson</span>
+                    </button>
+                    <div id="wisdom_of_yunus-content" class="md-render-area"></div>
+                </div>
+                <div class="archive-card rel-item">
+                    <div class="card-header">
+                        <span class="tag">EASE | SPIRITUAL_PATH</span>
+                        <span class="date">2026-01-12</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا * إِنَّ مَعَ الْعُسْرِ يُسْرًا
+                        </p>
+                        <p class="translation">"For indeed, with hardship [will be] ease. Indeed, with hardship [will
+                            be] ease." (94:5-6)</p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('divine_ease', this)">
+                        <span class="btn-text">View Sufi Reflection</span>
+                    </button>
+                    <div id="divine_ease-content" class="md-render-area"></div>
+                </div>
+                <div class="archive-card rel-item">
+                    <div class="card-header">
+                        <span class="tag">ETHICS | CRITIQUE</span>
+                        <span class="date">2026-01-12</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">الأدب قبل العلم</p>
+                        <p class="translation">"Adab (Etiquette) precedes Knowledge."</p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('adab_vs_arrogance', this)">
+                        <span class="btn-text">View Analysis</span>
+                    </button>
+                    <div id="adab_vs_arrogance-content" class="md-render-area"></div>
+                </div>
+
+                <div class="archive-card rel-item">
+                    <div class="card-header">
+                        <span class="tag">PROTECTION | STOP-LOSS</span>
+                        <span class="date">2026</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
+                        <p class="translation">"Sufficient for us is Allah, and He is the best Disposer of affairs."</p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('hasbunallah_logic', this)">
+                        <span class="btn-text">View Texts</span>
+                    </button>
+                    <div id="hasbunallah_logic-content" class="md-render-area"></div>
+                </div>
+                <div class="archive-card rel-item">
+                    <div class="card-header">
+                        <span class="tag">HEALING | FORGIVENESS</span>
+                        <span class="date">2026-01-12</span>
+                    </div>
+                    <div class="script-block">
+                        <p class="arabic-text" dir="rtl">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</p>
+                        <p class="translation">"Unquestionably, by the remembrance of Allah do hearts find rest." </p>
+                    </div>
+                    <button class="expand-btn" onclick="toggleMD('architecture_of_peace', this)">
+                        <span class="btn-text">View Peace Protocol</span>
+                    </button>
+                    <div id="architecture_of_peace-content" class="md-render-area"></div>
+                </div>
+            </div>
+
             <div class="generator-box">
                 <h4>[ RELIGION SNIPPET GENERATOR ]</h4>
                 <div class="gen-form">
@@ -184,67 +195,135 @@
             </div>
         </section>
 
- <section id="travel" class="tab-content">
-    <div class="upload-stub archive-card" style="border: 1px dashed var(--pp-green); background: var(--pp-green-soft);">
-        <h4 style="font-size: 0.8rem; margin-bottom: 15px;">[ ADD NEW TRAVEL LOG ]</h4>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <input type="file" id="pic-upload" accept="image/*" style="font-size: 0.7rem;">
-            <input type="text" id="pic-note" placeholder="Enter notes (e.g. New York Upstate-2021)" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
-            <input type="text" id="pic-tag" placeholder="Tags (e.g. #Nature #Logic)" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
-            <button onclick="previewTravel()" class="expand-btn" style="margin-top: 5px;">Render Preview</button>
-        </div>
-    </div>
+        <section id="travel" class="tab-content">
+            <div class="upload-stub archive-card"
+                style="border: 1px dashed var(--pp-green); background: var(--pp-green-soft);">
+                <h4 style="font-size: 0.8rem; margin-bottom: 15px;">[ ADD NEW TRAVEL LOG ]</h4>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <input type="file" id="pic-upload" accept="image/*" style="font-size: 0.7rem;">
+                    <input type="text" id="pic-note" placeholder="Enter notes (e.g. New York Upstate-2021)"
+                        style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                    <input type="text" id="pic-tag" placeholder="Tags (e.g. #Nature #Logic)"
+                        style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                    <button onclick="previewTravel()" class="expand-btn" style="margin-top: 5px;">Render
+                        Preview</button>
+                </div>
+            </div>
 
-    <div id="photo-feed">
- <div class="archive-card photo-item">
-    <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
-        <img src="pics/1.jpeg" style="width: 100%;" onerror="this.src='https://via.placeholder.com/800x400?text=Check+Path+Pics/1.jpeg'">
-    </div>
-    <div class="card-header">
-        <span class="tag">#TRAVEL</span>
-        <span class="date">2021</span>
-    </div>
-    <h3>New York Upstate</h3>
-    <p>Notes: Observations on the persistence of geographical archetypes. The Finger Lakes region logic.</p>
-</div>
-<div id="photo-feed">
-    <div class="archive-card photo-item">
-        <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
-            <img src="pics/2.jpg" alt="Bukhara Hidden Door">
-        </div>
-        <div class="card-header"><span class="tag">#BUKHARA2023</span><span class="date">MAY 2023</span></div>
-        <p><strong>Reflections:</strong> This circular portal, reminiscent of a Hobbit-hole yet nestled within the ancient brickwork of Uzbekistan, serves as a metaphor for the <em>Seed of Awakening</em>. In the heart of Bukhara, I felt the intersection of my family heritage and the universal logic of 'Ami'. It represents the threshold where the complex code of a Bioinformatician gives way to the simple, sovereign breath of the individual.</p>
-    </div>
+            <div id="photo-feed">
+                <div class="archive-card photo-item">
+                    <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
+                        <img src="pics/1.jpeg" style="width: 100%;"
+                            onerror="this.src='https://via.placeholder.com/800x400?text=Check+Path+Pics/1.jpeg'">
+                    </div>
+                    <div class="card-header">
+                        <span class="tag">#TRAVEL</span>
+                        <span class="date">2021</span>
+                    </div>
+                    <h3>New York Upstate</h3>
+                    <p>Notes: Observations on the persistence of geographical archetypes. The Finger Lakes region logic.
+                    </p>
+                </div>
+                <div id="photo-feed">
+                    <div class="archive-card photo-item">
+                        <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
+                            <img src="pics/2.jpg" alt="Bukhara Hidden Door">
+                        </div>
+                        <div class="card-header"><span class="tag">#BUKHARA2023</span><span class="date">MAY 2023</span>
+                        </div>
+                        <p><strong>Reflections:</strong> This circular portal, reminiscent of a Hobbit-hole yet nestled
+                            within the ancient brickwork of Uzbekistan, serves as a metaphor for the <em>Seed of
+                                Awakening</em>. In the heart of Bukhara, I felt the intersection of my family heritage
+                            and the universal logic of 'Ami'. It represents the threshold where the complex code of a
+                            Bioinformatician gives way to the simple, sovereign breath of the individual.</p>
+                    </div>
 
-    <div class="archive-card photo-item">
-        <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
-            <img src="pics/3.jpg" alt="Po-i-Kalyan Complex">
-        </div>
-        <div class="card-header"><span class="tag">#SOVEREIGNTY</span><span class="date">MAY 2023</span></div>
-        <p><strong>Reflections:</strong> Standing before the monumental scales of Central Asian architecture, one is reminded of the <em>Unyielding Will</em>. These structures have survived empires, much like the dignity I carry from my grandparents. It is a visual testament to my refusal to be a mere instrument in any hierarchy. The symmetry here is not about control, but about a cosmic balance that respects the autonomy of every soul.</p>
-    </div>
-    <div class="archive-card photo-item">
-        <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
-            <img src="pics/4.jpg" alt="Night at Lyabi-Hauz">
-        </div>
-        <div class="card-header"><span class="tag">#EQUAL_NODES</span><span class="date">MAY 2023</span></div>
-        <p><strong>Reflections:</strong> As night falls over the desert oases, the lights form a <em>Galaxy of Equal Nodes</em>. Bukhara was always a junction of ideas, not just goods. This image captures the essence of a 'Symphony of Equals'—a decentralized network where wisdom flows horizontally, echoing the high-frequency civilizations Ami once described.</p>
-    </div>
-    </div>
-</section>
+                    <div class="archive-card photo-item">
+                        <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
+                            <img src="pics/3.jpg" alt="Po-i-Kalyan Complex">
+                        </div>
+                        <div class="card-header"><span class="tag">#SOVEREIGNTY</span><span class="date">MAY 2023</span>
+                        </div>
+                        <p><strong>Reflections:</strong> Standing before the monumental scales of Central Asian
+                            architecture, one is reminded of the <em>Unyielding Will</em>. These structures have
+                            survived empires, much like the dignity I carry from my grandparents. It is a visual
+                            testament to my refusal to be a mere instrument in any hierarchy. The symmetry here is not
+                            about control, but about a cosmic balance that respects the autonomy of every soul.</p>
+                    </div>
+                    <div class="archive-card photo-item">
+                        <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
+                            <img src="pics/4.jpg" alt="Night at Lyabi-Hauz">
+                        </div>
+                        <div class="card-header"><span class="tag">#EQUAL_NODES</span><span class="date">MAY 2023</span>
+                        </div>
+                        <p><strong>Reflections:</strong> As night falls over the desert oases, the lights form a
+                            <em>Galaxy of Equal Nodes</em>. Bukhara was always a junction of ideas, not just goods. This
+                            image captures the essence of a 'Symphony of Equals'—a decentralized network where wisdom
+                            flows horizontally, echoing the high-frequency civilizations Ami once described.
+                        </p>
+                    </div>
+                </div>
+        </section>
     </main>
 
     <style>
-    /* 小日历样式 */
-    .calendar-sidebar { padding: 12px; }
-    #calendar-menu { font-size: 0.9rem; }
-    .year-group { margin-bottom: 12px; }
-    .year-label { font-weight: 700; cursor: pointer; margin-bottom: 6px; color: var(--pp-green); }
-    .day-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-    .day-item { background: #f7f7f7; padding: 6px 8px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem; color: #333; box-shadow: 0 1px 0 rgba(0,0,0,0.03); }
-    .day-item:hover { background: #eef; }
-    .badge { background: #333; color: #fff; padding: 2px 6px; border-radius: 999px; font-size: 0.75rem; }
-    .day-label { font-weight: 600; }
+        /* 小日历样式 */
+        .calendar-sidebar {
+            padding: 12px;
+        }
+
+        #calendar-menu {
+            font-size: 0.9rem;
+        }
+
+        .year-group {
+            margin-bottom: 12px;
+        }
+
+        .year-label {
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 6px;
+            color: var(--pp-green);
+        }
+
+        .day-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .day-item {
+            background: #f7f7f7;
+            padding: 6px 8px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #333;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+        }
+
+        .day-item:hover {
+            background: #eef;
+        }
+
+        .badge {
+            background: #333;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+        }
+
+        .day-label {
+            font-weight: 600;
+        }
     </style>
 
     <script>
@@ -277,169 +356,204 @@
             }
         }
 
-const psychFiles = [
-    { 
-    id: 'pilgrims_defense_logic', 
-    title: "The Architecture of the Awakened Soul: Principles of Discernment and Ascent", 
-    tag: "#SPIRITUAL_LOGIC", 
-    date: "2026-01-18", 
-    dir: 'religion' 
-},
-    { 
-    id: 'strait_gate_as_sirat', 
-    title: "The Strait Gate and the Right Path: Spiritual Reconstruction", 
-    tag: "#SPIRITUAL_LOGIC", 
-    date: "2026-01-17", 
-    dir: 'religion' 
-},
-{ 
-    id: 'survival_of_awakening_revised', 
-    title: "Surviving the Divine Destruction: The Logic of Loss", 
-    tag: "#SPIRITUAL_LOGIC", 
-    date: "2026-01-17", 
-    dir: 'religion' 
-},
-{ 
-    id: 'mastering_the_nafs_arabi', 
-    title: "The Architecture of the Inner Self: Ibn Arabi on the Nafs", 
-    tag: "#SPIRITUAL_LOGIC", 
-    date: "2026-01-17", 
-    dir: 'religion' 
-},
-{ 
-    id: 'islamic_psychology_nafs', 
-    title: "Nafs in Islamic Psychology: The Layers of Human Psyche", 
-    tag: "#SPIRITUAL_LOGIC", 
-    date: "2026-01-17", 
-    dir: 'religion' 
-},
-{ 
-    id: 'law_grace_and_rahmah', 
-    title: "The Dusty Parlor: Comparative Logic of Law and Grace", 
-    tag: "#SPIRITUAL_LOGIC", 
-    date: "2026-01-17", 
-    dir: 'religion' 
-},
-{ 
-    id: 'the_vision_of_judgment', 
-    title: "The Unready Soul: The Goad of Conscience and the Biblical Reality", 
-    tag: "#SPIRITUAL_LOGIC", 
-    date: "2026-01-17", 
-    dir: 'religion' 
-},
-    { 
-    id: 'architecture_of_resilience', 
-    title: "The Architecture of Resilience: Neural Plasticity and Fragility", 
-    tag: "#PSYCHOLOGY | #NEUROSCIENCE", 
-    date: "2026-01-12", 
-    dir: 'psych' 
-},
-{ 
-    id: 'architecture_of_resilience2', 
-    title: "The Architecture of Resilience: Deconstructing Emotional Flashbacks", 
-    tag: "#PSYCHOLOGY | #NEUROSCIENCE", 
-    date: "2026-01-12", 
-    dir: 'psych' 
-},
-{ 
-    id: 'ai_bias', 
-    title: "AI Bias: Mathematical Logic vs. Mythological Fear", 
-    tag: "#AI | #DATA_SCIENCE | #CRITICAL_THINKING", 
-    date: "2026-01-12", 
-    dir: 'psych' 
-},
-{ 
-    id: 'muhasabah_vs_fawning', 
-    title: "Muhasabah: The Difference Between Reflection and Self-Blame", 
-    tag: "#PSYCHOLOGY | #ADAB | #COGNITION", 
-    date: "2026-01-12", 
-    dir: 'psych' 
-},
-{ 
-    id: 'transformation_and_pathway', 
-    title: "Transformation through Mercy: Finding the Pathway within the Divine", 
-    tag: "#SPIRITUALITY | #TRANSFORMATION | #COMPASSION", 
-    date: "2026-01-12", 
-    dir: 'philosophy' 
-},
-{ 
-    id: 'cognitive_filtering_protocol', 
-    title: "The Cognitive Architecture of Social Filtering: Managing Neural Bandwidth", 
-    tag: "#PSYCHOLOGY | #COGNITIVE_SCIENCE", 
-    date: "2026-01-13", 
-    dir: 'psych' 
-},
-    { 
-    id: 'the_house_of_wisdom', 
-    title: "The House of Wisdom: Synthesis of Reason and Spirit", 
-    tag: "#INTEGRATION | #SUFISM", 
-    date: "2026-01-12", 
-    dir: 'philosophy' 
-    },
-    { 
-    id: 'architecture_of_resilience', 
-    title: "The Architecture of Resilience: Neural Plasticity and Fragility", 
-    tag: "#PSYCHOLOGY | #NEUROSCIENCE", 
-    date: "2026-01-12", 
-    dir: 'psych' 
-    },
-{ 
-        id: 'geopolitics_of_the_soul', 
-        title: "The Geopolitics of the Soul: Civilizational Dissonance", 
-        tag: "#SOVEREIGNTY | #CULTURE", 
-        date: "2026-01-12", 
-        dir: 'religion' 
-    },
-        { 
-        id: 'galaxy_of_nodes', 
-        title: "A Galaxy of Equal Nodes", 
-        tag: "#SOVEREIGNTY", 
-        date: "2026-01-12", 
-        dir: 'philosophy' 
-    },
-    { 
-        id: 'equal_souls', 
-        title: "The Duality of Vessel", 
-        tag: "#EQUALITY | #IDENTITY", 
-        date: "2026-01-12", 
-        dir: 'identity' 
-    },
-    { 
-        id: 'the_logic_of_ayyub', 
-        title: "The Logic of Ayyub (Job)", 
-        tag: "#SPIRITUAL_LOGIC", 
-        date: "2026-01-10", 
-        dir: 'religion' 
-    },
-    { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026-01-10", dir: 'psych' },
-    { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026-01-10", dir: 'psych' },
-    { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2026-01-10", dir: 'psych' },
-    { id: 'rumi_and_arabi', title: "The Alchemy of Love: Rumi and the Infinite Heart", tag: "#SPIRITUAL_AWAKENING", date: "2026-01-10", dir: 'philosophy' },
-    { id: 'the_mask_of_inshallah', title: "The Mask of Inshallah", tag: "#SUFISM", date: "2026-01-12", dir: 'philosophy' },
-    { id: 'the_well', title: "The Well in the Desert", tag: "#STOICISM", date: "2026-01-11", dir: 'philosophy' },
-    { 
-        id: 'the_architecture_of_freedom', 
-        title: "The Architecture of Freedom", 
-        tag: "#POLITICS | #LOGIC", 
-        date: "2026-01-11", 
-        dir: 'philosophy' 
-    }
-];
-window.onload = function() {
-    renderPsychCards();
-    // 如果你有其他初始化函数也可以放在这里
-};
+        const psychFiles = [
+            {
+                "id": "scrutiny_of_hypocrisy_2026",
+                "title": "The Scrutiny of the Fragmented Soul: Between Divine Order and Human Hypocrisy",
+                "tag": "#SPIRITUAL_LOGIC",
+                "date": "2026-02-23",
+                "dir": "religion"
+            },
+            {
+                "id": "quantum_sovereignty_avatar",
+                "title": "Quantum Entanglement and the Möbius Strip: The Topology of a Breakup",
+                "tag": "#SPIRITUAL_LOGIC",
+                "date": "2026-01-31",
+                "dir": "reflection"
+            },
+            {
+                "id": "muichiro_infinity_logic",
+                "title": "The 'Mu' in Muichiro: From Traumatic Dissociation to Intellectual Infinity",
+                "tag": "#SPIRITUAL_LOGIC",
+                "date": "2026-01-31",
+                "dir": "reflection"
+            },
+            {
+                "id": "muichiro_void_logic",
+                "title": "Beyond the Ordinary: Why the 'Mu' of Infinity is a Survival Command",
+                "tag": "#SPIRITUAL_LOGIC",
+                "date": "2026-01-31",
+                "dir": "reflection"
+            },
+            {
+                id: 'pilgrims_defense_logic',
+                title: "The Architecture of the Awakened Soul: Principles of Discernment and Ascent",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-18",
+                dir: 'religion'
+            },
+            {
+                id: 'strait_gate_as_sirat',
+                title: "The Strait Gate and the Right Path: Spiritual Reconstruction",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-17",
+                dir: 'religion'
+            },
+            {
+                id: 'survival_of_awakening_revised',
+                title: "Surviving the Divine Destruction: The Logic of Loss",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-17",
+                dir: 'religion'
+            },
+            {
+                id: 'mastering_the_nafs_arabi',
+                title: "The Architecture of the Inner Self: Ibn Arabi on the Nafs",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-17",
+                dir: 'religion'
+            },
+            {
+                id: 'islamic_psychology_nafs',
+                title: "Nafs in Islamic Psychology: The Layers of Human Psyche",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-17",
+                dir: 'religion'
+            },
+            {
+                id: 'aql_hikmat_journey',
+                title: "The Journey from Rationality (Aql) to Wisdom (Hikmat)",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-20",
+                dir: 'philosophy'
+            },
+            {
+                id: 'law_grace_and_rahmah',
+                title: "The Dusty Parlor: Comparative Logic of Law and Grace",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-17",
+                dir: 'religion'
+            },
+            {
+                id: 'the_vision_of_judgment',
+                title: "The Unready Soul: The Goad of Conscience and the Biblical Reality",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-17",
+                dir: 'religion'
+            },
+            {
+                id: 'architecture_of_resilience',
+                title: "The Architecture of Resilience: Neural Plasticity and Fragility",
+                tag: "#PSYCHOLOGY | #NEUROSCIENCE",
+                date: "2026-01-12",
+                dir: 'psych'
+            },
+            {
+                id: 'architecture_of_resilience2',
+                title: "The Architecture of Resilience: Deconstructing Emotional Flashbacks",
+                tag: "#PSYCHOLOGY | #NEUROSCIENCE",
+                date: "2026-01-12",
+                dir: 'psych'
+            },
+            {
+                id: 'ai_bias',
+                title: "AI Bias: Mathematical Logic vs. Mythological Fear",
+                tag: "#AI | #DATA_SCIENCE | #CRITICAL_THINKING",
+                date: "2026-01-12",
+                dir: 'psych'
+            },
+            {
+                id: 'muhasabah_vs_fawning',
+                title: "Muhasabah: The Difference Between Reflection and Self-Blame",
+                tag: "#PSYCHOLOGY | #ADAB | #COGNITION",
+                date: "2026-01-12",
+                dir: 'psych'
+            },
+            {
+                id: 'transformation_and_pathway',
+                title: "Transformation through Mercy: Finding the Pathway within the Divine",
+                tag: "#SPIRITUALITY | #TRANSFORMATION | #COMPASSION",
+                date: "2026-01-12",
+                dir: 'philosophy'
+            },
+            {
+                id: 'cognitive_filtering_protocol',
+                title: "The Cognitive Architecture of Social Filtering: Managing Neural Bandwidth",
+                tag: "#PSYCHOLOGY | #COGNITIVE_SCIENCE",
+                date: "2026-01-13",
+                dir: 'psych'
+            },
+            {
+                id: 'the_house_of_wisdom',
+                title: "The House of Wisdom: Synthesis of Reason and Spirit",
+                tag: "#INTEGRATION | #SUFISM",
+                date: "2026-01-12",
+                dir: 'philosophy'
+            },
+            {
+                id: 'architecture_of_resilience',
+                title: "The Architecture of Resilience: Neural Plasticity and Fragility",
+                tag: "#PSYCHOLOGY | #NEUROSCIENCE",
+                date: "2026-01-12",
+                dir: 'psych'
+            },
+            {
+                id: 'geopolitics_of_the_soul',
+                title: "The Geopolitics of the Soul: Civilizational Dissonance",
+                tag: "#SOVEREIGNTY | #CULTURE",
+                date: "2026-01-12",
+                dir: 'religion'
+            },
+            {
+                id: 'galaxy_of_nodes',
+                title: "A Galaxy of Equal Nodes",
+                tag: "#SOVEREIGNTY",
+                date: "2026-01-12",
+                dir: 'philosophy'
+            },
+            {
+                id: 'equal_souls',
+                title: "The Duality of Vessel",
+                tag: "#EQUALITY | #IDENTITY",
+                date: "2026-01-12",
+                dir: 'identity'
+            },
+            {
+                id: 'the_logic_of_ayyub',
+                title: "The Logic of Ayyub (Job)",
+                tag: "#SPIRITUAL_LOGIC",
+                date: "2026-01-10",
+                dir: 'religion'
+            },
+            { id: 'manifesto', title: "The T-Person's Manifesto", tag: "#LOGIC", date: "2026-01-10", dir: 'psych' },
+            { id: 'cognitive_systems', title: "Cognitive Architecture", tag: "#SYSTEMS", date: "2026-01-10", dir: 'psych' },
+            { id: 'energy_law', title: "Social Energy Conservation", tag: "#ENERGY", date: "2026-01-10", dir: 'psych' },
+            { id: 'rumi_and_arabi', title: "The Alchemy of Love: Rumi and the Infinite Heart", tag: "#SPIRITUAL_AWAKENING", date: "2026-01-10", dir: 'philosophy' },
+            { id: 'the_mask_of_inshallah', title: "The Mask of Inshallah", tag: "#SUFISM", date: "2026-01-12", dir: 'philosophy' },
+            { id: 'the_well', title: "The Well in the Desert", tag: "#STOICISM", date: "2026-01-11", dir: 'philosophy' },
+            {
+                id: 'the_architecture_of_freedom',
+                title: "The Architecture of Freedom",
+                tag: "#POLITICS | #LOGIC",
+                date: "2026-01-11",
+                dir: 'philosophy'
+            }
+        ];
+        window.onload = function () {
+            renderPsychCards();
+            // 如果你有其他初始化函数也可以放在这里
+        };
 
-function renderPsychCards() {
-    const container = document.getElementById('psych-container');
-    if(!container) return;
-    container.innerHTML = ''; 
+        function renderPsychCards() {
+            const container = document.getElementById('psych-container');
+            if (!container) return;
+            container.innerHTML = '';
 
-    psychFiles.forEach(file => {
-        // 动态构建路径：如果定义了 dir 就用 dir，否则默认在 psych 下
-        const subDir = file.dir || 'psych';
-        const filePathForToggle = `${subDir}/${file.id}`;
-        const card = `
+            psychFiles.forEach(file => {
+                // 动态构建路径：如果定义了 dir 就用 dir，否则默认在 psych 下
+                const subDir = file.dir || 'psych';
+                const filePathForToggle = `${subDir}/${file.id}`;
+                const card = `
             <div class="archive-card">
                 <div class="card-header">
                     <span class="tag">${file.tag}</span>
@@ -452,74 +566,74 @@ function renderPsychCards() {
                 </button>
                 <div id="${fullPath}-content" class="md-render-area"></div>
             </div>`;
-        container.innerHTML += card;
-    });
-}
-
-function initPsychSection() {
-    renderCalendarMenu();
-    renderPsychCards(); // 默认显示全部
-}
-
-// 生成侧边栏日历菜单（按日显示并计数）
-function renderCalendarMenu() {
-    const menu = document.getElementById('calendar-menu');
-    const dateMap = {}; // 存储 { "2026": { "01-12": count, ... }, ... }
-
-    // 只统计完整的 YYYY-MM-DD 日期
-    psychFiles.forEach(f => {
-        if (!/^\d{4}-\d{2}-\d{2}$/.test(f.date)) return;
-        const [year, month, day] = f.date.split('-');
-        if (!dateMap[year]) dateMap[year] = {};
-        const md = `${month}-${day}`;
-        dateMap[year][md] = (dateMap[year][md] || 0) + 1;
-    });
-
-    menu.innerHTML = '';
-    Object.keys(dateMap).sort((a,b) => b-a).forEach(year => {
-        let html = `<div class="year-group">
-            <div class="year-label" onclick="filterByDate('${year}')">${year}</div>
-            <ul class="day-list">`;
-        const days = Object.keys(dateMap[year]).sort((a,b) => {
-            return new Date(`${year}-${b}`) - new Date(`${year}-${a}`);
-        });
-        days.forEach(md => {
-            const [mm, dd] = md.split('-');
-            const count = dateMap[year][md];
-            html += `<li class="day-item" onclick="filterByDate('${year}', '${mm}', '${dd}')"><span class="day-label">${mm}-${dd}</span><span class="badge">${count}</span></li>`;
-        });
-        html += `</ul></div>`;
-        menu.innerHTML += html;
-    });
-} 
-
-// 筛选功能（支持年 / 月 / 日）
-function filterByDate(year, month = null, day = null) {
-    const filtered = psychFiles.filter(f => {
-        if (day) return f.date === `${year}-${month}-${day}`;
-        if (month) return f.date.startsWith(`${year}-${month}`);
-        return f.date.startsWith(year);
-    });
-    renderPsychCards(filtered);
-} 
-
-// 朋友圈风格的渲染：同一天的只显示一个大日期
-function renderPsychCards(data = psychFiles) {
-    const container = document.getElementById('psych-container');
-    container.innerHTML = '';
-    
-    let lastDate = "";
-    const sortedData = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    sortedData.forEach(file => {
-        // 如果是新的一天，增加日期标题
-        if (file.date !== lastDate) {
-            container.innerHTML += `<div class="date-divider">${file.date}</div>`;
-            lastDate = file.date;
+                container.innerHTML += card;
+            });
         }
 
-        const subDir = file.dir || 'psych';
-        const card = `
+        function initPsychSection() {
+            renderCalendarMenu();
+            renderPsychCards(); // 默认显示全部
+        }
+
+        // 生成侧边栏日历菜单（按日显示并计数）
+        function renderCalendarMenu() {
+            const menu = document.getElementById('calendar-menu');
+            const dateMap = {}; // 存储 { "2026": { "01-12": count, ... }, ... }
+
+            // 只统计完整的 YYYY-MM-DD 日期
+            psychFiles.forEach(f => {
+                if (!/^\d{4}-\d{2}-\d{2}$/.test(f.date)) return;
+                const [year, month, day] = f.date.split('-');
+                if (!dateMap[year]) dateMap[year] = {};
+                const md = `${month}-${day}`;
+                dateMap[year][md] = (dateMap[year][md] || 0) + 1;
+            });
+
+            menu.innerHTML = '';
+            Object.keys(dateMap).sort((a, b) => b - a).forEach(year => {
+                let html = `<div class="year-group">
+            <div class="year-label" onclick="filterByDate('${year}')">${year}</div>
+            <ul class="day-list">`;
+                const days = Object.keys(dateMap[year]).sort((a, b) => {
+                    return new Date(`${year}-${b}`) - new Date(`${year}-${a}`);
+                });
+                days.forEach(md => {
+                    const [mm, dd] = md.split('-');
+                    const count = dateMap[year][md];
+                    html += `<li class="day-item" onclick="filterByDate('${year}', '${mm}', '${dd}')"><span class="day-label">${mm}-${dd}</span><span class="badge">${count}</span></li>`;
+                });
+                html += `</ul></div>`;
+                menu.innerHTML += html;
+            });
+        }
+
+        // 筛选功能（支持年 / 月 / 日）
+        function filterByDate(year, month = null, day = null) {
+            const filtered = psychFiles.filter(f => {
+                if (day) return f.date === `${year}-${month}-${day}`;
+                if (month) return f.date.startsWith(`${year}-${month}`);
+                return f.date.startsWith(year);
+            });
+            renderPsychCards(filtered);
+        }
+
+        // 朋友圈风格的渲染：同一天的只显示一个大日期
+        function renderPsychCards(data = psychFiles) {
+            const container = document.getElementById('psych-container');
+            container.innerHTML = '';
+
+            let lastDate = "";
+            const sortedData = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            sortedData.forEach(file => {
+                // 如果是新的一天，增加日期标题
+                if (file.date !== lastDate) {
+                    container.innerHTML += `<div class="date-divider">${file.date}</div>`;
+                    lastDate = file.date;
+                }
+
+                const subDir = file.dir || 'psych';
+                const card = `
             <div class="archive-card" style="margin-top:0; margin-bottom:20px;">
                 <div class="card-header"><span class="tag">${file.tag}</span></div>
                 <h3>${file.title}</h3>
@@ -528,48 +642,48 @@ function renderPsychCards(data = psychFiles) {
                 </button>
                 <div id="${subDir}/${file.id}-content" class="md-render-area"></div>
             </div>`;
-        container.innerHTML += card;
-    });
-}
+                container.innerHTML += card;
+            });
+        }
 
-// 修改 window.onload
-window.onload = function() {
-    initPsychSection();
-};
+        // 修改 window.onload
+        window.onload = function () {
+            initPsychSection();
+        };
 
 
-// 增强版的 toggleMD，支持子目录
-async function toggleMD(filePath, btn) {
-    const area = document.getElementById(`${filePath}-content`);
-    const btnText = btn.querySelector('.btn-text');
-    
-    if (area.classList.contains('open')) {
-        area.classList.remove('open');
-        btnText.textContent = 'View Texts';
-        return;
-    }
+        // 增强版的 toggleMD，支持子目录
+        async function toggleMD(filePath, btn) {
+            const area = document.getElementById(`${filePath}-content`);
+            const btnText = btn.querySelector('.btn-text');
 
-    try {
-        btnText.textContent = 'Decrypting...';
-        // 关键：确保路径在 GitHub 上是 blogs/religion/name.md 这种结构
-        const res = await fetch(`blogs/${filePath}.md`); 
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        const text = await res.text();
-        
-        area.innerHTML = marked.parse(text);
-        area.classList.add('open');
-        btnText.textContent = 'Collapse';
-    } catch (err) {
-        console.error("Fetch failed for path:", `blogs/${filePath}.md`);
-        area.innerHTML = `
+            if (area.classList.contains('open')) {
+                area.classList.remove('open');
+                btnText.textContent = 'View Texts';
+                return;
+            }
+
+            try {
+                btnText.textContent = 'Decrypting...';
+                // 关键：确保路径在 GitHub 上是 blogs/religion/name.md 这种结构
+                const res = await fetch(`blogs/${filePath}.md`);
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                const text = await res.text();
+
+                area.innerHTML = marked.parse(text);
+                area.classList.add('open');
+                btnText.textContent = 'Collapse';
+            } catch (err) {
+                console.error("Fetch failed for path:", `blogs/${filePath}.md`);
+                area.innerHTML = `
             <div style="padding: 20px; border: 1px dashed #eee; color: #999; font-size: 0.85rem;">
                 > [ERROR]: File "blogs/${filePath}.md" not found.
                 <br>> Current Directory Sync: Failed.
             </div>`;
-        area.classList.add('open');
-        btnText.textContent = 'In Progress';
-    }
-}
+                area.classList.add('open');
+                btnText.textContent = 'In Progress';
+            }
+        }
 
         function generateSnippet() {
             const tag = document.getElementById('in-tag').value || 'NEW SCRIPTURE';
@@ -598,15 +712,15 @@ async function toggleMD(filePath, btn) {
             navigator.clipboard.writeText(snippet);
         }
         function previewTravel() {
-    const fileInput = document.getElementById('pic-upload');
-    const note = document.getElementById('pic-note').value;
-    const tag = document.getElementById('pic-tag').value || '#TRAVEL';
-    const feed = document.getElementById('photo-feed');
+            const fileInput = document.getElementById('pic-upload');
+            const note = document.getElementById('pic-note').value;
+            const tag = document.getElementById('pic-tag').value || '#TRAVEL';
+            const feed = document.getElementById('photo-feed');
 
-    if (fileInput.files && fileInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const newCard = `
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const newCard = `
                 <div class="archive-card photo-item">
                     <div class="photo-wrapper" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
                         <img src="${e.target.result}" style="width: 100%;">
@@ -614,12 +728,13 @@ async function toggleMD(filePath, btn) {
                     <div class="card-header"><span class="tag">${tag}</span><span class="date">JUST NOW</span></div>
                     <p><strong>Note:</strong> ${note}</p>
                 </div>`;
-            feed.insertAdjacentHTML('afterbegin', newCard);
-        };
-        reader.readAsDataURL(fileInput.files[0]);
-    }
-}
+                    feed.insertAdjacentHTML('afterbegin', newCard);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
     </script>
-    
+
 </body>
+
 </html>

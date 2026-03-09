@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Karama | Identity</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <aside class="sidebar">
         <div class="sidebar-content">
@@ -42,26 +44,30 @@
                     Merging <strong>Biological Complexity</strong> with <strong>Industrial AI</strong>.
                     A synthesis of evolutionary logic and high-dimensional architecture.
                 </p>
-                <a href="assets/academic_cv.pdf" target="_blank" class="btn-nordic">ACCESS FULL DOSSIER</a>
+                <div style="display:flex; gap:10px; margin-top:15px; justify-content:center;">
+                    <a href="assets/academic_cv.pdf" target="_blank" class="btn-nordic">ACADEMIC CV</a>
+                    <a href="assets/industry_cv.pdf" target="_blank" class="btn-nordic">INDUSTRY CV</a>
+                </div>
             </div>
         </section>
-        
+
 
         <div class="content-grid">
-            
+
             <section class="info-module">
                 <h3>Technical Stack</h3>
                 <div class="module-line"></div>
                 <div class="tag-container">
-                    <span>scRNA-seq (Scanpy/Seurat)</span>
-                    <span>WES/WGS Analysis (CWL/GATK)</span>
-                    <span>Immune Profiling (CIBERSORT/xCell)</span>
-                    <span>Survival Modeling (CoxPH/XGBoost)</span>
-                    <span>Deep Learning (CNN/RNN/PyTorch)</span>
+                    <span>AI Agents (LangChain / LangGraph)</span>
+                    <span>GWAS / TWAS / MR Pipelines</span>
+                    <span>scRNA-seq (Scanpy / Seurat)</span>
+                    <span>Immune Deconvolution (CIBERSORT / MCP-counter)</span>
+                    <span>RNA-seq Differential Expression (DESeq2)</span>
+                    <span>Machine Learning (XGBoost / CoxPH)</span>
                     <span>Feature Interpretation (SHAP)</span>
-                    <span>Big Data (Spark/Hive/Airflow)</span>
-                    <span>NLP/OCR Automation (HSBC Scale)</span>
-                    <span>DevOps (Docker/Jenkins/CI/CD)</span>
+                    <span>Big Data (Spark / Hive / Airflow)</span>
+                    <span>Python Data Pipelines</span>
+                    <span>Frontend (HTML / CSS / JavaScript)</span>
                 </div>
             </section>
 
@@ -69,174 +75,206 @@
                 <h3>Academic Interests</h3>
                 <div class="module-line"></div>
                 <ul class="interest-list">
-                    <li><strong>Bioinformatics & Computational Genomics</strong></li>
-                    <li><strong>Cancer Immunology & Multi-Omics Analysis</strong></li>
-                    <li><strong>Cognitive Neuroscience & Biopsychology</strong></li>
-                    <li><strong>Machine Learning in Biomedical Applications</strong></li>
-                    <li><strong>Molecular Genetics & Evolutionary Biology</strong></li>
-                    <li><strong>Clinical Psychology & Family Therapy (CUPL)</strong></li>
+                    <ul class="interest-list">
+                        <li><strong>AI for Scientific Discovery</strong></li>
+                        <li><strong>Computational Genomics & GWAS</strong></li>
+                        <li><strong>Psychiatric Genomics (MDD)</strong></li>
+                        <li><strong>Cancer Immunology & Tumor Microenvironment</strong></li>
+                        <li><strong>Multi-Omics Data Integration</strong></li>
+                        <li><strong>Clinical Psychology & CBT</strong></li>
+                    </ul>
                 </ul>
             </section>
- <section class="gallery-static">
-    <div class="quote-header">
-        <h2 class="rumi-quote">"The soul hears things the mind does not understand."</h2>
-        <p class="sufi-subtitle">— 谈楚抒 / Karama's Archive —</p>
-    </div>
+            <section class="gallery-static">
+                <div class="quote-header">
+                    <h2 class="rumi-quote">"The soul hears things the mind does not understand."</h2>
+                    <p class="sufi-subtitle">— 谈楚抒 / Karama's Archive —</p>
+                </div>
 
-    <div class="photo-quad-grid">
-        <div class="quad-item">
-            <img src="pics/A.jpg" alt="Awakening">
-            <div class="quad-overlay">The Seed of Awakening</div>
-        </div>
-        <div class="quad-item">
-            <img src="pics/B.jpeg" alt="Sovereignty">
-            <div class="quad-overlay">Sovereignty of Soul</div>
-        </div>
-        <div class="quad-item">
-            <img src="pics/C.jpeg" alt="Symphony">
-            <div class="quad-overlay">Symphony of Equals</div>
-        </div>
-        <div class="quad-item">
-            <img src="pics/D.jpeg" alt="Light">
-            <div class="quad-overlay">The Light Enters</div>
-        </div>
-    </div>
-</section>
-<div class="site-status-bar">
-    <span class="pulse-dot"></span>
-    <span id="live-date-en"></span>
-    <span class="status-sep">/</span>
-    <span class="visitor-stats">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; opacity:0.6;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        READS: <span id="visit-count-num">0</span>
-    </span>
-</div>
-<style>
-.gallery-static {
-    padding: 60px 20px;
-    text-align: center;
-    background: #fff;
-}
-.photo-quad-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 田字形核心：两列 */
-    gap: 15px;
-    max-width: 800px;
-    margin: 40px auto;
-}
-.quad-item {
-    position: relative;
-    aspect-ratio: 1 / 1; /* 强制正方形 */
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.quad-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-.quad-item:hover img {
-    transform: scale(1.05);
-}
-.quad-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 15px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-.rumi-quote {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.6rem;
-    color: #2c3e50;
-}
-.sufi-subtitle {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    color: #95a5a6;
-    text-transform: uppercase;
-}
-</style>
-<script>
-function initStatus() {
-    // 1. 设置日期 (格式: Jan 14, 2026)
-    const now = new Date();
-    const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    const dateEl = document.getElementById('live-date-en');
-    if (dateEl) dateEl.innerText = dateStr;
+                <div class="photo-quad-grid">
+                    <div class="quad-item">
+                        <img src="pics/A.jpg" alt="Awakening">
+                        <div class="quad-overlay">The Seed of Awakening</div>
+                    </div>
+                    <div class="quad-item">
+                        <img src="pics/B.jpeg" alt="Sovereignty">
+                        <div class="quad-overlay">Sovereignty of Soul</div>
+                    </div>
+                    <div class="quad-item">
+                        <img src="pics/C.jpeg" alt="Symphony">
+                        <div class="quad-overlay">Symphony of Equals</div>
+                    </div>
+                    <div class="quad-item">
+                        <img src="pics/D.jpeg" alt="Light">
+                        <div class="quad-overlay">The Light Enters</div>
+                    </div>
+                </div>
+            </section>
+            <div class="site-status-bar">
+                <span class="pulse-dot"></span>
+                <span id="live-date-en"></span>
+                <span class="status-sep">/</span>
+                <span class="visitor-stats">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="margin-right:4px; opacity:0.6;">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    READS: <span id="visit-count-num">0</span>
+                </span>
+            </div>
+            <style>
+                .gallery-static {
+                    padding: 60px 20px;
+                    text-align: center;
+                    background: #fff;
+                }
 
-    // 2. 模拟访问量 (本地存储)
-    let visits = localStorage.getItem('karama_site_clicks') || 1024; // 初始基数
-    visits = parseInt(visits, 10) + 1;
-    localStorage.setItem('karama_site_clicks', visits);
-    const visitsEl = document.getElementById('visit-count-num');
-    if (visitsEl) visitsEl.innerText = visits.toLocaleString();
-}
+                .photo-quad-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    /* 田字形核心：两列 */
+                    gap: 15px;
+                    max-width: 800px;
+                    margin: 40px auto;
+                }
 
-// 确保页面加载后运行
-document.addEventListener('DOMContentLoaded', initStatus);
-</script>
+                .quad-item {
+                    position: relative;
+                    aspect-ratio: 1 / 1;
+                    /* 强制正方形 */
+                    overflow: hidden;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                }
 
-<style>
-.gallery-soul {
-    padding: 60px 20px;
-    background: #fdfdfd; /* 柔和的纸张感 */
-    text-align: center;
-}
-.rumi-quote {
-    font-family: 'Playfair Display', serif; /* 建议引用衬线字体 */
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #2c3e50;
-    margin-bottom: 5px;
-}
-.sufi-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    color: #95a5a6;
-    text-transform: uppercase;
-}
-.gallery-container {
-        padding: 50px 0;
-        background: transparent;
-        overflow: hidden;
-    }
-    .swiper {
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px; /* 卡片宽度 */
-        height: 400px; /* 卡片高度 */
-        filter: blur(1px); /* 未选中的略微模糊，增加深度感 */
-        transition: 0.5s;
-        border-radius: 8px;
-        box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-    }
-    .swiper-slide-active {
-        filter: blur(0); /* 选中的变清晰 */
-        transform: scale(1.1); /* 选中的略微放大 */
-        z-index: 10;
-    }
-    .slide-content {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        color: white;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        font-family: 'Playfair Display', serif;
-        font-style: italic;
-    }
-    </style>
+                .quad-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                }
+
+                .quad-item:hover img {
+                    transform: scale(1.05);
+                }
+
+                .quad-overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 15px;
+                    background: rgba(0, 0, 0, 0.5);
+                    color: #fff;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                }
+
+                .rumi-quote {
+                    font-family: 'Playfair Display', serif;
+                    font-style: italic;
+                    font-size: 1.6rem;
+                    color: #2c3e50;
+                }
+
+                .sufi-subtitle {
+                    font-size: 0.8rem;
+                    letter-spacing: 2px;
+                    color: #95a5a6;
+                    text-transform: uppercase;
+                }
+            </style>
+            <script>
+                function initStatus() {
+                    // 1. 设置日期 (格式: Jan 14, 2026)
+                    const now = new Date();
+                    const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    const dateEl = document.getElementById('live-date-en');
+                    if (dateEl) dateEl.innerText = dateStr;
+
+                    // 2. 模拟访问量 (本地存储)
+                    let visits = localStorage.getItem('karama_site_clicks') || 1024; // 初始基数
+                    visits = parseInt(visits, 10) + 1;
+                    localStorage.setItem('karama_site_clicks', visits);
+                    const visitsEl = document.getElementById('visit-count-num');
+                    if (visitsEl) visitsEl.innerText = visits.toLocaleString();
+                }
+
+                // 确保页面加载后运行
+                document.addEventListener('DOMContentLoaded', initStatus);
+            </script>
+
+            <style>
+                .gallery-soul {
+                    padding: 60px 20px;
+                    background: #fdfdfd;
+                    /* 柔和的纸张感 */
+                    text-align: center;
+                }
+
+                .rumi-quote {
+                    font-family: 'Playfair Display', serif;
+                    /* 建议引用衬线字体 */
+                    font-style: italic;
+                    font-size: 1.8rem;
+                    color: #2c3e50;
+                    margin-bottom: 5px;
+                }
+
+                .sufi-subtitle {
+                    font-size: 0.9rem;
+                    letter-spacing: 2px;
+                    color: #95a5a6;
+                    text-transform: uppercase;
+                }
+
+                .gallery-container {
+                    padding: 50px 0;
+                    background: transparent;
+                    overflow: hidden;
+                }
+
+                .swiper {
+                    width: 100%;
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                }
+
+                .swiper-slide {
+                    background-position: center;
+                    background-size: cover;
+                    width: 300px;
+                    /* 卡片宽度 */
+                    height: 400px;
+                    /* 卡片高度 */
+                    filter: blur(1px);
+                    /* 未选中的略微模糊，增加深度感 */
+                    transition: 0.5s;
+                    border-radius: 8px;
+                    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+                }
+
+                .swiper-slide-active {
+                    filter: blur(0);
+                    /* 选中的变清晰 */
+                    transform: scale(1.1);
+                    /* 选中的略微放大 */
+                    z-index: 10;
+                }
+
+                .slide-content {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    color: white;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                    font-family: 'Playfair Display', serif;
+                    font-style: italic;
+                }
+            </style>
         </div>
     </main>
 </body>
+
 </html>

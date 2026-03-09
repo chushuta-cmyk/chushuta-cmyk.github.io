@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Engineering | Karama</title>
@@ -12,8 +13,10 @@
             --border-light: #e0e4e0;
         }
 
-        .main-content { padding: 60px 10%; }
-        
+        .main-content {
+            padding: 60px 10%;
+        }
+
         .project-frame {
             border: 1px solid var(--border-light);
             border-left: 4px solid var(--brand-green);
@@ -75,6 +78,7 @@
         }
     </style>
 </head>
+
 <body>
     <aside class="sidebar">
         <div class="sidebar-content">
@@ -90,7 +94,9 @@
                 <li><a href="thoughts.html">04. Thoughts/Travel</a></li>
             </ul>
         </div>
-        <div class="sidebar-footer"><p>Hasbunallahu wa ni’mal wakil.</p></div>
+        <div class="sidebar-footer">
+            <p>Hasbunallahu wa ni’mal wakil.</p>
+        </div>
     </aside>
 
     <main class="main-content">
@@ -100,19 +106,67 @@
         <div class="project-frame">
             <div class="meta-header">
                 <span>MAR 2024 — PRESENT</span>
-                <span>HSBC | SENIOR DATA ANALYST</span>
+                <div class="project-frame">
+                    <div class="meta-header">
+                        <span>2025 — PRESENT</span>
+                        <span>AI SYSTEMS</span>
+                    </div>
+
+                    <h3 class="project-title">AI Research Agent for Scientific Discovery</h3>
+
+                    <ul class="project-desc">
+                        <li>Developed LLM-based autonomous research agent capable of literature retrieval and workflow
+                            generation.</li>
+                        <li>Designed modular tool system for querying genomic datasets and biomedical publications.</li>
+                        <li>Integrated vector search and multi-step reasoning for automated analysis planning.</li>
+                    </ul>
+
+                    <div class="tag-row">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">Vector Search</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
             </div>
             <h3 class="project-title">AI-Driven Financial Intelligence Architecture</h3>
             <ul class="project-desc">
-                <li>Engineered an automated OCR + NLP pipeline for financial report parsing, achieving a 60% reduction in manual workload.</li>
-                <li>Optimized large-scale ETL workflows using Spark, Hive, and Airflow, reducing processing windows by 30% for real-time decision stability.</li>
-                <li>Integrated Large Language Model (LLM) APIs to automate multi-dimensional text mining and risk entity recognition.</li>
+                <li>Engineered an automated OCR + NLP pipeline for financial report parsing, achieving a 60% reduction
+                    in manual workload.</li>
+                <li>Optimized large-scale ETL workflows using Spark, Hive, and Airflow, reducing processing windows by
+                    30% for real-time decision stability.</li>
+                <li>Integrated Large Language Model (LLM) APIs to automate multi-dimensional text mining and risk entity
+                    recognition.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">Python</span><span class="tag">Spark</span><span class="tag">Airflow</span><span class="tag">NLP</span><span class="tag">OCR</span><span class="tag">LLM integration</span>
+                <span class="tag">Python</span><span class="tag">Spark</span><span class="tag">Airflow</span><span
+                    class="tag">NLP</span><span class="tag">OCR</span><span class="tag">LLM integration</span>
             </div>
         </div>
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>RESEARCH</span>
+                <span>COMPUTATIONAL PSYCHIATRY</span>
+            </div>
 
+            <h3 class="project-title">Multi-Region Transcriptomic Analysis of Major Depressive Disorder</h3>
+
+            <ul class="project-desc">
+                <li>Integrated multiple GEO transcriptomic datasets to identify convergent molecular mechanisms across
+                    brain regions.</li>
+                <li>Performed differential expression analysis and network modeling to detect shared regulatory
+                    pathways.</li>
+                <li>Identified metabolic stress and neuroinflammation signatures across MDD brain datasets.</li>
+            </ul>
+
+            <div class="tag-row">
+                <span class="tag">RNA-seq</span>
+                <span class="tag">WGCNA</span>
+                <span class="tag">Meta-analysis</span>
+                <span class="tag">Pathway Analysis</span>
+            </div>
+        </div>
         <div class="project-frame">
             <div class="meta-header">
                 <span>OCT 2023 — PRESENT</span>
@@ -120,12 +174,16 @@
             </div>
             <h3 class="project-title">Single-Cell Atlas & Explainable AI for Oncology</h3>
             <ul class="project-desc">
-                <li>Spearheaded scRNA-seq analysis for NPC and EBV+ cohorts, utilizing Scanpy and Palantir for immune trajectory inference.</li>
-                <li>Developed a robust survival prediction model using XGBoost + CoxPH, leveraging SHAP values to decode the "black box" of clinical algorithms.</li>
-                <li>Managed the full project lifecycle independently, from raw data processing to deep learning (CNN/RNN) model deployment.</li>
+                <li>Spearheaded scRNA-seq analysis for NPC and EBV+ cohorts, utilizing Scanpy and Palantir for immune
+                    trajectory inference.</li>
+                <li>Developed a robust survival prediction model using XGBoost + CoxPH, leveraging SHAP values to decode
+                    the "black box" of clinical algorithms.</li>
+                <li>Managed the full project lifecycle independently, from raw data processing to deep learning
+                    (CNN/RNN) model deployment.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">Scanpy</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">CoxPH</span><span class="tag">Survival Analysis</span>
+                <span class="tag">Scanpy</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span
+                    class="tag">CoxPH</span><span class="tag">Survival Analysis</span>
             </div>
         </div>
 
@@ -136,12 +194,16 @@
             </div>
             <h3 class="project-title">Multi-Omics Automation & Containerized Infrastructure</h3>
             <ul class="project-desc">
-                <li>Designed automated analysis pipelines for WGS, WES, and DNA Methylation datasets, significantly increasing processing throughput.</li>
-                <li>Implemented Docker-based containerization for bioinformatics toolchains to ensure environment consistency across distributed systems.</li>
-                <li>Co-developed production-grade pipelines using Nextflow and Snakemake for large-scale clinical data management.</li>
+                <li>Designed automated analysis pipelines for WGS, WES, and DNA Methylation datasets, significantly
+                    increasing processing throughput.</li>
+                <li>Implemented Docker-based containerization for bioinformatics toolchains to ensure environment
+                    consistency across distributed systems.</li>
+                <li>Co-developed production-grade pipelines using Nextflow and Snakemake for large-scale clinical data
+                    management.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">WGS/WES</span><span class="tag">Docker</span><span class="tag">Snakemake</span><span class="tag">Nextflow</span><span class="tag">Methylation</span>
+                <span class="tag">WGS/WES</span><span class="tag">Docker</span><span class="tag">Snakemake</span><span
+                    class="tag">Nextflow</span><span class="tag">Methylation</span>
             </div>
         </div>
 
@@ -152,14 +214,19 @@
             </div>
             <h3 class="project-title">Cross-Disciplinary Scientific Training</h3>
             <ul class="project-desc">
-                <li>Master of IT (Monash): Specialized in Software Development, Machine Learning, and Database Architectures.</li>
-                <li>Bachelor of Biological Sciences & Psychology (UB): Conducted research in evolutionary genetics, molecular phylogeny, and biopsychology.</li>
-                <li>Integrated psychological insights with neurogenomics to approach Major Depressive Disorder (MDD) from a holistic perspective.</li>
+                <li>Master of IT (Monash): Specialized in Software Development, Machine Learning, and Database
+                    Architectures.</li>
+                <li>Bachelor of Biological Sciences & Psychology (UB): Conducted research in evolutionary genetics,
+                    molecular phylogeny, and biopsychology.</li>
+                <li>Integrated psychological insights with neurogenomics to approach Major Depressive Disorder (MDD)
+                    from a holistic perspective.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">Evolutionary Genetics</span><span class="tag">IT Architecture</span><span class="tag">Machine Learning</span><span class="tag">Neuroscience</span>
+                <span class="tag">Evolutionary Genetics</span><span class="tag">IT Architecture</span><span
+                    class="tag">Machine Learning</span><span class="tag">Neuroscience</span>
             </div>
         </div>
     </main>
 </body>
+
 </html>

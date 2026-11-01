@@ -3,26 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research | Karama</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-green: #4a5d4e;
-            /* 雅致的深橄榄绿 */
             --soft-green: #f1f3f1;
             --border-light: #e0e4e0;
+            --accent-gold: #c59b27;
         }
 
         .main-content {
             padding: 60px 10%;
         }
 
-        /* 优雅的裱框设计 */
         .project-frame {
             border: 1px solid var(--border-light);
             border-left: 4px solid var(--brand-green);
-            /* 侧边重色强调 */
             padding: 30px;
             margin-bottom: 40px;
             background: #fff;
@@ -30,6 +29,7 @@
             text-decoration: none;
             display: block;
             color: inherit;
+            border-radius: 4px;
         }
 
         .project-frame:hover {
@@ -46,44 +46,167 @@
             font-size: 0.7rem;
             letter-spacing: 2px;
             color: var(--brand-green);
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .project-title {
-            font-size: 1.6rem;
+            font-size: 1.55rem;
             margin-bottom: 15px;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.25;
+            color: #1a1a1a;
         }
 
         .project-desc {
             font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
+            line-height: 1.65;
+            color: #4a4a4a;
             margin-bottom: 20px;
         }
 
         .tag-row {
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .tag {
-            font-size: 0.65rem;
-            padding: 4px 10px;
+            font-size: 0.68rem;
+            padding: 5px 11px;
             background: var(--soft-green);
             border-radius: 4px;
             color: var(--brand-green);
             font-weight: 600;
+            letter-spacing: 0.3px;
         }
 
-        .github-link {
-            display: inline-block;
+        .project-status {
             margin-top: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.72rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Manuscript Section */
+        .publication-section {
+            margin-top: 90px;
+            padding-bottom: 100px;
+        }
+
+        .pub-container {
+            max-width: 950px;
+            margin-top: 35px;
+        }
+
+        .pub-card {
+            display: flex;
+            gap: 35px;
+            padding: 30px;
+            border: 1px solid #eef0ee;
+            border-left: 4px solid var(--brand-green);
+            background: #fafafa;
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+
+        .pub-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            background: #fff;
+        }
+
+        .pub-meta {
+            min-width: 105px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .pub-year {
+            font-size: 1.15rem;
+            font-weight: 800;
             color: var(--brand-green);
-            text-decoration: underline;
+            display: block;
+        }
+
+        .pub-badge {
+            font-size: 0.65rem;
+            color: #888;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 3px;
+            display: block;
+        }
+
+        .pub-badge.published {
+            color: #2e7d32;
+        }
+
+        .pub-badge.review {
+            color: #d97706;
+        }
+
+        .pub-body h3 {
+            font-size: 1.22rem;
+            margin-bottom: 12px;
+            line-height: 1.35;
+            font-weight: 800;
+        }
+
+        .pub-authors {
+            font-size: 0.88rem;
+            color: #444;
+            margin-bottom: 10px;
+            line-height: 1.55;
+        }
+
+        .pub-journal {
+            font-size: 0.82rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-pub-primary {
+            font-size: 0.7rem;
+            color: #fff;
+            background: var(--brand-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+
+        .btn-pub-primary:hover {
+            background: #38463b;
+        }
+
+        .btn-pub-outline {
+            font-size: 0.7rem;
+            color: var(--brand-green);
+            border: 1px solid var(--brand-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 5px 13px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .btn-pub-outline:hover {
+            background: var(--soft-green);
         }
     </style>
 </head>
@@ -100,7 +223,7 @@
                 <li><a href="index.html">01. Identity</a></li>
                 <li><a href="research.html" class="active">02. Research</a></li>
                 <li><a href="engineering.html">03. Engineering</a></li>
-                <li><a href="thoughts.html">04. Thoughts/Travel</a></li>
+                <li><a href="thoughts.html">04. Thoughts / Travel</a></li>
             </ul>
         </div>
         <div class="sidebar-footer">
@@ -111,185 +234,296 @@
     <main class="main-content">
         <p class="page-title">Research Programs / 02</p>
         <h2 style="font-size: 3.5rem; margin-bottom: 50px;">Translational <br>Systems Biology.</h2>
+
+        <!-- Project 01: EEG -->
         <div class="project-frame">
             <div class="meta-header">
                 <span>PROJECT — 01</span>
-                <span>VIRAL ONCOLOGY</span>
+                <span>COMPUTATIONAL NEUROSCIENCE & EEG</span>
             </div>
-            <h3 class="project-title">EBV Immune Microenvironment Study in NPC</h3>
+            <h3 class="project-title">Parameterized Resting-State EEG Signatures of Acute Sleep Deprivation</h3>
             <p class="project-desc">
-                Multi-omics revision study investigating how EBV load shapes immune-inflamed versus myeloid-suppressive
-                states in nasopharyngeal carcinoma, integrating transcriptomics, immune deconvolution, machine learning,
-                and survival-associated biomarkers.
+                Investigating cortical state reactivity and individual neural trait stability under acute sleep deprivation across 71 paired participants (142 sessions, OpenNeuro <code>ds004902</code>). By excising the 1/f aperiodic background via spectral parameterization (FOOOF/specparam), we demonstrated marked aperiodic broadband offset elevation (<em>d<sub>z</sub></em> = +0.788) alongside robust Individual Alpha Frequency (IAF) stability (ICC = 0.816). Implemented subject-independent Leave-One-Subject-Out (LOSO) machine learning decoding (SVM AUC = 0.881) and out-of-fold vigilance prediction (<em>r</em> = 0.750, <em>R</em><sup>2</sup> = 0.551).
             </p>
             <div class="tag-row">
-                <span class="tag">DESeq2</span>
-                <span class="tag">CIBERSORT</span>
-                <span class="tag">scRNA-seq</span>
-                <span class="tag">Proteomics</span>
-                <span class="tag">Survival Analysis</span>
+                <span class="tag">Resting-State EEG</span>
+                <span class="tag">FOOOF / specparam</span>
+                <span class="tag">Aperiodic 1/f Dynamics</span>
+                <span class="tag">MNE-Python</span>
+                <span class="tag">LOSO Machine Learning</span>
+                <span class="tag">Functional Connectivity</span>
+            </div>
+            <div class="project-status">
+                Status: Manuscript Finalized (Draft v15, submission ready to <em>SLEEP</em>) · Lead Author
             </div>
         </div>
 
+        <!-- Project 02: MDD Multi-Omics & OXPHOS -->
         <div class="project-frame">
             <div class="meta-header">
                 <span>PROJECT — 02</span>
-                <span>COMPUTATIONAL PSYCHIATRY</span>
+                <span>COMPUTATIONAL PSYCHIATRY & MULTI-OMICS</span>
             </div>
-            <h3 class="project-title">Multi-Region Transcriptomic Analysis of MDD</h3>
+            <h3 class="project-title">MDD–OXPHOS Multi-Omics Re-analysis Framework</h3>
             <p class="project-desc">
-                Cross-study brain transcriptomic analysis of major depressive disorder aimed at identifying convergent
-                molecular mechanisms across multiple brain regions, with emphasis on pathway-level convergence, hub-gene
-                networks, metabolic stress, and neuroinflammatory programs.
+                A comprehensive cross-tissue, multi-omics retrospective re-evaluation integrating 31 automated R/Python pipelines across 13 clinical and postmortem cohorts (analytic <em>N</em> > 2,000). Reassessing asserted mitochondrial and oxidative phosphorylation (OXPHOS) dysregulation in Major Depressive Disorder (MDD) across peripheral blood transcriptomics (6 cohorts), postmortem brain transcriptomics (4 brain regions: DLPFC, AnCg, nAcc, HIP), paired Illumina EPIC 850K DNA methylation, and statistical genetics (GWAS summary statistics, FUMA/MAGMA, SMR). Revealed that previous reports of widespread OXPHOS downregulation conflate somatic comorbidity, medication exposure, and cell composition shifts.
             </p>
             <div class="tag-row">
                 <span class="tag">RNA-seq</span>
-                <span class="tag">Meta-analysis</span>
-                <span class="tag">WGCNA</span>
-                <span class="tag">Pathway Enrichment</span>
-                <span class="tag">Neurogenomics</span>
+                <span class="tag">Microarray</span>
+                <span class="tag">DNA Methylation (EPIC 850K)</span>
+                <span class="tag">GWAS & MAGMA</span>
+                <span class="tag">Cell Deconvolution</span>
+                <span class="tag">Psychiatric Genomics</span>
+            </div>
+            <div class="project-status">
+                Status: Complete Pipeline Release (31 Reproducible Modules) · Working Paper Ready
             </div>
         </div>
+
+        <!-- Project 03: EBV & NPC -->
         <div class="project-frame">
             <div class="meta-header">
                 <span>PROJECT — 03</span>
-                <span>IMMUNE TRANSCRIPTOMICS</span>
+                <span>VIRAL ONCOLOGY & IMMUNOGENOMICS</span>
             </div>
-            <h3 class="project-title">MDD Immune Cell Analysis</h3>
+            <h3 class="project-title">EBV Genomic Stratification & Myeloid-Inflammatory Polarization in NPC</h3>
             <p class="project-desc">
-                Transcriptomic immune deconvolution analysis of public MDD datasets to characterize adaptive immune
-                suppression patterns, preserved B-cell abundance with functional impairment, and blood–brain
-                barrier-associated immune trafficking signals.
+                Multi-omics investigation establishing how pre-treatment plasma Epstein–Barr virus (EBV) DNA copy number stratifies distinct tumor immune landscapes in nasopharyngeal carcinoma (NPC). Integrating bulk transcriptomic profiling with stage-adjusted sensitivity analysis, immune deconvolution (CIBERSORT, MCP-counter), and single-cell RNA-seq (NPC43). Demonstrated that low-EBV DNA tumors mount an intense, stage-robust myeloid-inflammatory signature (<em>CXCL8</em>, <em>S100A8/A9</em>, <em>TREM1</em>) driven by tumor-intrinsic transcriptional programs, whereas high-EBV tumors exhibit profound adaptive immune attenuation.
             </p>
             <div class="tag-row">
-                <span class="tag">MCP-counter</span>
-                <span class="tag">Gene Expression</span>
-                <span class="tag">Statistical Modeling</span>
-                <span class="tag">Psychiatric Immunology</span>
+                <span class="tag">EBV DNA Stratification</span>
+                <span class="tag">Single-Cell RNA-seq</span>
+                <span class="tag">DESeq2</span>
+                <span class="tag">CIBERSORT</span>
+                <span class="tag">Tumor Microenvironment</span>
+                <span class="tag">Survival Modeling</span>
+            </div>
+            <div class="project-status">
+                Status: Completed Follow-up Study (Draft 12, Co-first Author) & Published Review (<em>Viruses</em> 2025)
             </div>
         </div>
 
+        <!-- Project 04: Meta-Analysis -->
         <div class="project-frame">
             <div class="meta-header">
                 <span>PROJECT — 04</span>
-                <span>STATISTICAL GENOMICS</span>
+                <span>NEUROIMAGING & BIOMARKER META-ANALYSIS</span>
             </div>
-            <h3 class="project-title">GWAS, TWAS & Causal Genomics Pipeline</h3>
+            <h3 class="project-title">Multimodal Biomarker & Coordinate-Based fMRI Meta-Analytic Programs</h3>
             <p class="project-desc">
-                Developing genomic discovery workflows for association analysis, transcriptome-wide integration,
-                regulatory annotation, and causal inference. Current work includes GWAS locus discovery, TWAS
-                integration, epigenetic interpretation, and Mendelian randomization.
+                Dual meta-analytic investigations targeting critical questions in neuropsychiatry: (1) <strong>Amyloid-β in Depression</strong>: A 24-study systematic review and meta-analysis synthesizing CSF, PET, and plasma biomarkers, revealing a near-null pooled difference overall but uncovering crucial quantification discordance between DVR kinetic modeling and SUVR (published in <em>Neuroscience</em>, 2026); and (2) <strong>Childhood Adversity & Reward Processing</strong>: First coordinate-based Activation Likelihood Estimation (ALE) meta-analysis evaluating task-based fMRI across reward circuits (striatum, mPFC), demonstrating literature-wide statistical power deficits and spatial convergence boundaries.
             </p>
             <div class="tag-row">
-                <span class="tag">GWAS</span>
-                <span class="tag">TWAS</span>
-                <span class="tag">Epigenetics</span>
-                <span class="tag">Mendelian Randomization</span>
-                <span class="tag">PLINK2</span>
-                <span class="tag">GEMMA</span>
+                <span class="tag">Activation Likelihood Estimation (ALE)</span>
+                <span class="tag">Task fMRI</span>
+                <span class="tag">PET / CSF / Plasma Biomarkers</span>
+                <span class="tag">PRISMA Guidelines</span>
+                <span class="tag">Statistical Power Analysis</span>
+            </div>
+            <div class="project-status">
+                Status: Published in <em>Neuroscience</em> (2026) · Under Review at <em>Child Abuse & Neglect</em> · First Author
             </div>
         </div>
 
-
-        <div class="project-frame">
-            <div class="meta-header">
-                <span>PROJECT — 04</span>
-                <span>STATISTICAL GENOMICS</span>
-            </div>
-            <h3 class="project-title">GWAS, TWAS & Causal Genomics Pipeline</h3>
-            <p class="project-desc">
-                Developing genomic discovery workflows for association analysis, transcriptome-wide integration,
-                regulatory annotation, and causal inference. Current work includes GWAS locus discovery, TWAS
-                integration, epigenetic interpretation, and Mendelian randomization.
-            </p>
-            <div class="tag-row">
-                <span class="tag">GWAS</span>
-                <span class="tag">TWAS</span>
-                <span class="tag">Epigenetics</span>
-                <span class="tag">Mendelian Randomization</span>
-                <span class="tag">PLINK2</span>
-                <span class="tag">GEMMA</span>
-            </div>
-        </div>
+        <!-- Project 05: Statistical Genomics -->
         <div class="project-frame">
             <div class="meta-header">
                 <span>PROJECT — 05</span>
+                <span>STATISTICAL GENOMICS & CAUSAL INFERENCE</span>
+            </div>
+            <h3 class="project-title">GWAS, TWAS & Causal Regulatory Discovery</h3>
+            <p class="project-desc">
+                Constructing end-to-end computational genomics workflows for complex trait association analysis, transcriptome-wide association studies (TWAS), fine-mapping of cis-regulatory elements, and bidirectional Mendelian Randomization (MR). Integrating single-cell foundation models (scGPT, CausCell) for in-silico perturbation analysis and decoupling genuine causal regulatory networks from observational confounding in neural and immune populations.
+            </p>
+            <div class="tag-row">
+                <span class="tag">GWAS</span>
+                <span class="tag">TWAS</span>
+                <span class="tag">Mendelian Randomization</span>
+                <span class="tag">PLINK2</span>
+                <span class="tag">Causal Inference</span>
+                <span class="tag">Single-Cell Foundation Models</span>
+            </div>
+            <div class="project-status">
+                Status: Active Framework Development & Benchmarking
+            </div>
+        </div>
+
+        <!-- Project 06: AI for Science -->
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>PROJECT — 06</span>
                 <span>AI FOR SCIENTIFIC DISCOVERY</span>
             </div>
-            <h3 class="project-title">AI Research Agent for Scientific Discovery</h3>
+            <h3 class="project-title">Autonomous Multi-Agent Systems for Biomedical Discovery</h3>
             <p class="project-desc">
-                Building LLM-based research agents for automated literature retrieval, workflow generation, and
-                biomedical knowledge navigation. The system is designed to support genomics, transcriptomics, and
-                multi-step analytical planning through modular skills and tool-based reasoning.
+                Architecting LLM-driven autonomous research agent collectives using LangChain and LangGraph for high-throughput scientific literature distillation, cross-database gene entity resolution (NCBI, Ensembl, UniProt, GEO), and automated analytical pipeline synthesis. Incorporates tool-augmented reasoning loops, programmatic verification checks, and self-correcting validation layers.
             </p>
             <div class="tag-row">
                 <span class="tag">LangChain</span>
                 <span class="tag">LangGraph</span>
-                <span class="tag">RAG</span>
-                <span class="tag">Vector Search</span>
+                <span class="tag">Tool-Augmented Reasoning</span>
+                <span class="tag">Retrieval-Augmented Generation</span>
                 <span class="tag">Python</span>
+            </div>
+            <div class="project-status">
+                Status: In Production & Continuous Optimization
             </div>
         </div>
 
+        <!-- Selected Manuscripts Section -->
+        <section class="publication-section">
+            <p class="page-title" style="letter-spacing: 3px; color: #999; text-transform: uppercase; font-size: 0.8rem;">
+                Selected Manuscripts & Publications / 06
+            </p>
 
-        <h3 class="project-title">Causal Inference in Cell State Transitions</h3>
-        <p class="project-desc">
-            Constructing a hierarchical AI framework for deep biological discovery:
-            Integrating <strong>scGPT</strong> for structural understanding,
-            <strong>Tahoe-x1</strong> for in-silico perturbation,
-            and <strong>CausCell</strong> to decouple causal gene regulatory networks from correlational noise.
-        </p>
-        <div class="tag-row">
-            <span class="tag">Causal Inference</span>
-            <span class="tag">Foundation Models</span>
-            <span class="tag">Perturb-Seq</span>
-        </div>
-        <div style="margin-top: 15px; font-size: 0.7rem; color: #999; font-style: italic;">
-            Status: Architecting Logic / Awaiting Compute Resources
-        </div>
-        </div>
-        <section class="publication-section" style="margin-top: 100px; padding-bottom: 100px;">
-            <p class="page-title" <p class="page-title"
-                style="letter-spacing: 3px; color: #999; text-transform: uppercase; font-size: 0.8rem;">Selected
-                Manuscripts / 06</p>
+            <div class="pub-container">
 
-            <div class="pub-container" style="max-width: 950px; margin-top: 40px;">
-
-                <div class="pub-card"
-                    style="display: flex; gap: 40px; padding: 35px; border: 1px solid #eef0ee; border-left: 4px solid #4a5d4e; background: #fafafa; transition: all 0.3s ease; margin-bottom: 30px;">
-
-                    <div class="pub-meta" style="min-width: 100px; font-family: 'Inter', sans-serif;">
-                        <span style="font-size: 1.1rem; font-weight: 800; color: #4a5d4e; display: block;">2025</span>
-                        <span style="font-size: 0.7rem; color: #999; letter-spacing: 1px;">SEPTEMBER</span>
+                <!-- Publication 1: Neuroscience 2026 -->
+                <div class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-year">2026</span>
+                        <span class="pub-badge published">Published</span>
                     </div>
-
                     <div class="pub-body">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; line-height: 1.3; font-weight: 800;">
-                            <a href="https://www.mdpi.com/1999-4915/17/9/1195" target="_blank"
-                                style="text-decoration: none; color: #222;">
-                                Single-Cell Transcriptomic Atlas Reveals Immune Microenvironment Remodeling in
-                                EBV-Associated Nasopharyngeal Carcinoma
+                        <h3>
+                            <a href="https://doi.org/10.1016/j.neuroscience.2026.07.065" target="_blank" style="text-decoration: none; color: #222;">
+                                Depression and Amyloid-β Across CSF, PET, and Plasma Biomarkers: A Systematic Review and Meta-Analysis
                             </a>
                         </h3>
-
-                        <p style="font-size: 0.9rem; color: #444; margin-bottom: 12px; line-height: 1.6;">
-                            Alsaadawe M., Radman B. A., Hu L., Long J., Luo Q., <strong>Tan C.</strong>, Amirat H. S.,
-                            Alsaadawi M., & Lyu X.
+                        <p class="pub-authors">
+                            <strong>Tan C.*</strong>
                         </p>
-
-                        <p style="font-size: 0.85rem; color: #666; font-style: italic; margin-bottom: 20px;">
-                            Viruses 2025, 17(9), 1195; DOI: 10.3390/v17091195
+                        <p class="pub-journal">
+                            <em>Neuroscience</em>, 2026, Volume 614, Pages 82–93. DOI: 10.1016/j.neuroscience.2026.07.065
                         </p>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.1016/j.neuroscience.2026.07.065" target="_blank" class="btn-pub-primary">
+                                Full Text & DOI
+                            </a>
+                            <span class="tag" style="align-self: center;">Solo First & Corresponding Author</span>
+                        </div>
+                    </div>
+                </div>
 
-                        <div style="display: flex; gap: 15px; align-items: center;">
-                            <a href="https://www.mdpi.com/1999-4915/17/9/1195" target="_blank"
-                                style="font-size: 0.7rem; color: #fff; background: #4a5d4e; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; text-decoration: none; padding: 6px 15px; border-radius: 2px;">
+                <!-- Publication 2: Viruses 2025 -->
+                <div class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-year">2025</span>
+                        <span class="pub-badge published">Published</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>
+                            <a href="https://doi.org/10.3390/v17091195" target="_blank" style="text-decoration: none; color: #222;">
+                                From Viral Infection to Malignancy: The Dual Threat of EBV and COVID-19 in Cancer Development
+                            </a>
+                        </h3>
+                        <p class="pub-authors">
+                            Alsaadawe M.†, Radman B. A.†, Hu L., Long J., Luo Q., <strong>Tan C.</strong>, Amirat H. S., Alsaadawi M.*, & Lyu X.*
+                        </p>
+                        <p class="pub-journal">
+                            <em>Viruses</em>, 2025, 17(9), 1195. DOI: 10.3390/v17091195 · PMC12474468
+                        </p>
+                        <div class="pub-links">
+                            <a href="https://www.mdpi.com/1999-4915/17/9/1195" target="_blank" class="btn-pub-primary">
                                 Full Text
                             </a>
-                            <a href="https://doi.org/10.3390/v17091195" target="_blank"
-                                style="font-size: 0.7rem; color: #4a5d4e; border: 1px solid #4a5d4e; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; text-decoration: none; padding: 5px 15px; border-radius: 2px;">
+                            <a href="https://doi.org/10.3390/v17091195" target="_blank" class="btn-pub-outline">
                                 DOI
                             </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 3: Child Abuse & Neglect Under Review -->
+                <div class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-year">2026</span>
+                        <span class="pub-badge review">Under Review</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>
+                            Childhood Adversity and Reward-Related Brain Function in Task-Based Functional MRI: A Systematic Review and Activation Likelihood Estimation Meta-Analysis
+                        </h3>
+                        <p class="pub-authors">
+                            <strong>Tan C.*</strong>
+                        </p>
+                        <p class="pub-journal">
+                            <em>Child Abuse & Neglect</em> (Manuscript under review; CHIABUNEG-S-26-02012)
+                        </p>
+                        <div class="pub-links">
+                            <span class="tag">fMRI ALE Meta-Analysis</span>
+                            <span class="tag">First & Corresponding Author</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 4: SLEEP Submission Ready -->
+                <div class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-year">2026</span>
+                        <span class="pub-badge review">Target: SLEEP</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>
+                            Parameterized Resting-State EEG Signatures of Acute Sleep Deprivation: Aperiodic Offset Elevation, Alpha Frequency Stability, and the Limits of Calibration-Free Decoding
+                        </h3>
+                        <p class="pub-authors">
+                            <strong>Tan C.*</strong>
+                        </p>
+                        <p class="pub-journal">
+                            Original Article (Finalized Draft v15, submission package ready)
+                        </p>
+                        <div class="pub-links">
+                            <span class="tag">Resting-State EEG</span>
+                            <span class="tag">FOOOF / LOSO-CV</span>
+                            <span class="tag">First & Corresponding Author</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 5: EBV NPC Follow-up -->
+                <div class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-year">2026</span>
+                        <span class="pub-badge review">Under Review</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>
+                            Plasma EBV DNA Grouping Uncovers a Stage-Robust Myeloid-Inflammatory Signature in Nasopharyngeal Carcinoma
+                        </h3>
+                        <p class="pub-authors">
+                            <strong>Tan C.†</strong>, Alsaadawe M.†, Hu T.†, & Lyu X.*
+                        </p>
+                        <p class="pub-journal">
+                            Viral Oncology Research Manuscript (Completed Draft 12)
+                        </p>
+                        <div class="pub-links">
+                            <span class="tag">Bulk & scRNA-seq</span>
+                            <span class="tag">Co-first Author</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 6: MDD Multi-Omics -->
+                <div class="pub-card">
+                    <div class="pub-meta">
+                        <span class="pub-year">2026</span>
+                        <span class="pub-badge review">Pipeline Release</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>
+                            Reassessing Oxidative Phosphorylation Associations in Depression Using Public Transcriptomic, Methylomic and Genetic Data
+                        </h3>
+                        <p class="pub-authors">
+                            <strong>Tan C.*</strong>
+                        </p>
+                        <p class="pub-journal">
+                            Multi-Omics Retrospective Benchmark & Re-analysis (31 End-to-End Automated Pipelines)
+                        </p>
+                        <div class="pub-links">
+                            <span class="tag">Multi-Cohort Cross-Omics</span>
+                            <span class="tag">Lead Investigator</span>
                         </div>
                     </div>
                 </div>

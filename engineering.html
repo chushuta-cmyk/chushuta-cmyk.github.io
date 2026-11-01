@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering | Karama</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-green: #4a5d4e;
@@ -27,6 +28,7 @@
             display: block;
             color: inherit;
             text-decoration: none;
+            border-radius: 4px;
         }
 
         .project-frame:hover {
@@ -43,7 +45,7 @@
             font-size: 0.7rem;
             letter-spacing: 2px;
             color: var(--brand-green);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
         }
 
@@ -51,30 +53,36 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.25;
+            color: #1a1a1a;
         }
 
         .project-desc {
             font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
+            line-height: 1.65;
+            color: #4a4a4a;
             margin-bottom: 20px;
             padding-left: 18px;
+        }
+
+        .project-desc li {
+            margin-bottom: 8px;
         }
 
         .tag-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .tag {
-            font-size: 0.65rem;
-            padding: 4px 10px;
+            font-size: 0.68rem;
+            padding: 5px 11px;
             background: var(--soft-green);
             border-radius: 4px;
             color: var(--brand-green);
             font-weight: 600;
+            letter-spacing: 0.3px;
         }
     </style>
 </head>
@@ -91,7 +99,7 @@
                 <li><a href="index.html">01. Identity</a></li>
                 <li><a href="research.html">02. Research</a></li>
                 <li><a href="engineering.html" class="active">03. Engineering</a></li>
-                <li><a href="thoughts.html">04. Thoughts/Travel</a></li>
+                <li><a href="thoughts.html">04. Thoughts / Travel</a></li>
             </ul>
         </div>
         <div class="sidebar-footer">
@@ -103,90 +111,120 @@
         <p class="page-title">Career & Engineering / 03</p>
         <h2 style="font-size: 3.5rem; margin-bottom: 50px;">Architectural <br>Systems.</h2>
 
+        <!-- Module 01: EEG Machine Learning & Neuroengineering -->
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>2025 — PRESENT</span>
+                <span>NEUROENGINEERING & MACHINE LEARNING</span>
+            </div>
+            <h3 class="project-title">Resting-State EEG Parameterization & Leakage-Free ML Architecture</h3>
+            <ul class="project-desc">
+                <li>Built automated, reproducible preprocessing pipelines using MNE-Python, FastICA ocular artifact rejection, and multi-evidence spherical spline bad-channel interpolation (100% paired session retention across OpenNeuro <code>ds004902</code>, <em>N</em> = 71 participants, 142 sessions).</li>
+                <li>Implemented spectral parameterization (FOOOF / specparam) isolating 1/f aperiodic offset and exponent dynamics from pure oscillatory periodic peaks across 61 scalp channels.</li>
+                <li>Architected a dual-stream 19-channel Surface Laplacian (CSD) montage harmonizer, Orthogonal Minimum Spanning Tree (OMST) topological graph constructor, and within-site normative <em>Z</em>-score calibrator for psychiatric benchmark datasets.</li>
+                <li>Engineered subject-independent Leave-One-Subject-Out (LOSO) cross-validation and nested CV models, achieving state classification AUC = 0.881 (accuracy 83.1%) and continuous objective vigilance regression (<em>r</em> = 0.750, <em>R</em><sup>2</sup> = 0.551).</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag">MNE-Python</span>
+                <span class="tag">FOOOF / specparam</span>
+                <span class="tag">Surface Laplacian (CSD)</span>
+                <span class="tag">OMST Topological Graph</span>
+                <span class="tag">LOSO Machine Learning</span>
+                <span class="tag">Scikit-Learn</span>
+            </div>
+        </div>
+
+        <!-- Module 02: MDD Multi-Omics Pipeline -->
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>2024 — PRESENT</span>
+                <span>COMPUTATIONAL GENOMICS & MULTI-OMICS</span>
+            </div>
+            <h3 class="project-title">End-to-End MDD Multi-Omics & OXPHOS Re-Analysis Suite</h3>
+            <ul class="project-desc">
+                <li>Developed a modular multi-omics re-analysis engine composed of 31 automated R and Python pipelines processing 13 independent clinical cohorts (total analytic <em>N</em> > 2,000).</li>
+                <li>Integrated bulk RNA-seq (DESeq2), microarray (limma), paired and external Illumina EPIC 850K / 450K DNA methylation (minfi, ChAMP), and postmortem brain transcriptomics across four anatomical regions.</li>
+                <li>Incorporated summary-level statistical genetics (GWAS, FUMA/MAGMA, SMR) and cell-type deconvolution models (MCP-counter, Houseman / Horvath clock models) to control for latent confounding.</li>
+                <li>Standardized path-agnostic logical root configuration and deterministic environment specifications, enabling one-command end-to-end auditability and reproduction.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag">R / Bioconductor</span>
+                <span class="tag">DESeq2</span>
+                <span class="tag">limma</span>
+                <span class="tag">minfi</span>
+                <span class="tag">FUMA / MAGMA</span>
+                <span class="tag">DNA Methylation</span>
+                <span class="tag">Reproducible Pipelines</span>
+            </div>
+        </div>
+
+        <!-- Module 03: AI Agent Collective -->
+        <div class="project-frame">
+            <div class="meta-header">
+                <span>2025 — PRESENT</span>
+                <span>AI SYSTEMS & AGENTS</span>
+            </div>
+            <h3 class="project-title">AI Research Agent Architecture for Scientific Discovery</h3>
+            <ul class="project-desc">
+                <li>Developed LLM-based autonomous scientific agents utilizing LangChain and LangGraph for literature retrieval, protocol verification, and analytical workflow generation.</li>
+                <li>Designed a modular tool-calling system interfacing directly with NCBI E-utilities, Ensembl REST, GEO, UniProt, and OpenAlex scholarly APIs.</li>
+                <li>Integrated vector embeddings, hybrid semantic-keyword retrieval (RAG), and multi-step reflection loops for automated computational biology analysis planning.</li>
+            </ul>
+            <div class="tag-row">
+                <span class="tag">LangChain</span>
+                <span class="tag">LangGraph</span>
+                <span class="tag">RAG</span>
+                <span class="tag">Vector Search</span>
+                <span class="tag">Biomedical APIs</span>
+                <span class="tag">Python</span>
+            </div>
+        </div>
+
+        <!-- Module 04: Financial Intelligence Architecture -->
         <div class="project-frame">
             <div class="meta-header">
                 <span>MAR 2024 — PRESENT</span>
-                <div class="project-frame">
-                    <div class="meta-header">
-                        <span>2025 — PRESENT</span>
-                        <span>AI SYSTEMS</span>
-                    </div>
-
-                    <h3 class="project-title">AI Research Agent for Scientific Discovery</h3>
-
-                    <ul class="project-desc">
-                        <li>Developed LLM-based autonomous research agent capable of literature retrieval and workflow
-                            generation.</li>
-                        <li>Designed modular tool system for querying genomic datasets and biomedical publications.</li>
-                        <li>Integrated vector search and multi-step reasoning for automated analysis planning.</li>
-                    </ul>
-
-                    <div class="tag-row">
-                        <span class="tag">LangChain</span>
-                        <span class="tag">LangGraph</span>
-                        <span class="tag">RAG</span>
-                        <span class="tag">Vector Search</span>
-                        <span class="tag">Python</span>
-                    </div>
-                </div>
+                <span>DATA PLATFORMS & FINANCIAL INTELLIGENCE</span>
             </div>
-            <h3 class="project-title">AI-Driven Financial Intelligence Architecture</h3>
+            <h3 class="project-title">AI-Driven Financial Intelligence & Distributed Architecture</h3>
             <ul class="project-desc">
-                <li>Engineered an automated OCR + NLP pipeline for financial report parsing, achieving a 60% reduction
-                    in manual workload.</li>
-                <li>Optimized large-scale ETL workflows using Spark, Hive, and Airflow, reducing processing windows by
-                    30% for real-time decision stability.</li>
-                <li>Integrated Large Language Model (LLM) APIs to automate multi-dimensional text mining and risk entity
-                    recognition.</li>
+                <li>Engineered an automated OCR + NLP processing pipeline for financial disclosures and audit reports, achieving a 60% reduction in manual review workload.</li>
+                <li>Optimized large-scale ETL workflows using Apache Spark, Hive, and Airflow, reducing batch processing windows by 30% for high-throughput decision systems.</li>
+                <li>Integrated Large Language Model (LLM) APIs to automate multi-dimensional entity recognition, risk taxonomy classification, and textual sentiment mining.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">Python</span><span class="tag">Spark</span><span class="tag">Airflow</span><span
-                    class="tag">NLP</span><span class="tag">OCR</span><span class="tag">LLM integration</span>
+                <span class="tag">Python</span>
+                <span class="tag">Apache Spark</span>
+                <span class="tag">Apache Airflow</span>
+                <span class="tag">Hive</span>
+                <span class="tag">NLP & OCR</span>
+                <span class="tag">LLM Integration</span>
             </div>
         </div>
+
+        <!-- Module 05: Single-Cell & Oncology Machine Learning -->
         <div class="project-frame">
             <div class="meta-header">
-                <span>RESEARCH</span>
-                <span>COMPUTATIONAL PSYCHIATRY</span>
+                <span>OCT 2023 — 2025</span>
+                <span>INDEPENDENT RESEARCH | BIOINFORMATICS</span>
             </div>
-
-            <h3 class="project-title">Multi-Region Transcriptomic Analysis of Major Depressive Disorder</h3>
-
+            <h3 class="project-title">Single-Cell Atlas & Explainable AI for Oncology (EBV & NPC)</h3>
             <ul class="project-desc">
-                <li>Integrated multiple GEO transcriptomic datasets to identify convergent molecular mechanisms across
-                    brain regions.</li>
-                <li>Performed differential expression analysis and network modeling to detect shared regulatory
-                    pathways.</li>
-                <li>Identified metabolic stress and neuroinflammation signatures across MDD brain datasets.</li>
-            </ul>
-
-            <div class="tag-row">
-                <span class="tag">RNA-seq</span>
-                <span class="tag">WGCNA</span>
-                <span class="tag">Meta-analysis</span>
-                <span class="tag">Pathway Analysis</span>
-            </div>
-        </div>
-        <div class="project-frame">
-            <div class="meta-header">
-                <span>OCT 2023 — PRESENT</span>
-                <span>INDEPENDENT | BIOINFORMATICS RESEARCHER</span>
-            </div>
-            <h3 class="project-title">Single-Cell Atlas & Explainable AI for Oncology</h3>
-            <ul class="project-desc">
-                <li>Spearheaded scRNA-seq analysis for NPC and EBV+ cohorts, utilizing Scanpy and Palantir for immune
-                    trajectory inference.</li>
-                <li>Developed a robust survival prediction model using XGBoost + CoxPH, leveraging SHAP values to decode
-                    the "black box" of clinical algorithms.</li>
-                <li>Managed the full project lifecycle independently, from raw data processing to deep learning
-                    (CNN/RNN) model deployment.</li>
+                <li>Spearheaded scRNA-seq analysis for NPC and EBV+ cohorts, utilizing Scanpy, Seurat, and Palantir for immune cell trajectory and lineage tracing.</li>
+                <li>Developed robust clinical survival prediction frameworks combining XGBoost and Cox Proportional Hazards (CoxPH) models, using SHAP tree explanations to interpret risk markers.</li>
+                <li>Managed the complete analytical lifecycle from raw FASTQ alignment and quality control to deep cellular deconvolution and publication-grade figure generation.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">Scanpy</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span
-                    class="tag">CoxPH</span><span class="tag">Survival Analysis</span>
+                <span class="tag">Scanpy</span>
+                <span class="tag">Seurat</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">SHAP Values</span>
+                <span class="tag">CoxPH</span>
+                <span class="tag">Survival Analysis</span>
             </div>
         </div>
 
+        <!-- Module 06: Cloud-Native Multi-Omics & DevOps -->
         <div class="project-frame">
             <div class="meta-header">
                 <span>PREVIOUS ROLE</span>
@@ -194,36 +232,37 @@
             </div>
             <h3 class="project-title">Multi-Omics Automation & Containerized Infrastructure</h3>
             <ul class="project-desc">
-                <li>Designed automated analysis pipelines for WGS, WES, and DNA Methylation datasets, significantly
-                    increasing processing throughput.</li>
-                <li>Implemented Docker-based containerization for bioinformatics toolchains to ensure environment
-                    consistency across distributed systems.</li>
-                <li>Co-developed production-grade pipelines using Nextflow and Snakemake for large-scale clinical data
-                    management.</li>
+                <li>Designed automated analysis pipelines for Whole Genome (WGS), Whole Exome (WES), and DNA Methylation datasets, significantly increasing processing throughput.</li>
+                <li>Implemented Docker-based containerization for bioinformatics toolchains to ensure environment consistency across distributed high-performance computing clusters.</li>
+                <li>Co-developed production-grade pipelines using Nextflow and Snakemake for large-scale clinical data management and standardized reporting.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">WGS/WES</span><span class="tag">Docker</span><span class="tag">Snakemake</span><span
-                    class="tag">Nextflow</span><span class="tag">Methylation</span>
+                <span class="tag">WGS / WES</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Snakemake</span>
+                <span class="tag">Nextflow</span>
+                <span class="tag">HPC / Linux</span>
             </div>
         </div>
 
-        <div class="project-frame" style="opacity: 0.85;">
+        <!-- Module 07: Education Foundation -->
+        <div class="project-frame" style="opacity: 0.9;">
             <div class="meta-header">
                 <span>FOUNDATION</span>
-                <span>UNIVERSITY AT BUFFALO & MONASH</span>
+                <span>MONASH UNIVERSITY & UNIVERSITY AT BUFFALO & CUPL</span>
             </div>
             <h3 class="project-title">Cross-Disciplinary Scientific Training</h3>
             <ul class="project-desc">
-                <li>Master of IT (Monash): Specialized in Software Development, Machine Learning, and Database
-                    Architectures.</li>
-                <li>Bachelor of Biological Sciences & Psychology (UB): Conducted research in evolutionary genetics,
-                    molecular phylogeny, and biopsychology.</li>
-                <li>Integrated psychological insights with neurogenomics to approach Major Depressive Disorder (MDD)
-                    from a holistic perspective.</li>
+                <li>M.A. Applied Psychology (CUPL): Specializing in computational psychiatric modeling, neuroimaging meta-analyses, and cognitive neuroscience.</li>
+                <li>Master of IT (Monash University): Focused on software development, machine learning algorithms, and distributed database architectures.</li>
+                <li>B.A. Biological Sciences & Psychology (SUNY Buffalo): Dual major coursework in molecular genetics, evolutionary biology, neuroscience, and biopsychology.</li>
             </ul>
             <div class="tag-row">
-                <span class="tag">Evolutionary Genetics</span><span class="tag">IT Architecture</span><span
-                    class="tag">Machine Learning</span><span class="tag">Neuroscience</span>
+                <span class="tag">Computational Biology</span>
+                <span class="tag">IT Architecture</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Neuroscience</span>
+                <span class="tag">Psychology</span>
             </div>
         </div>
     </main>
